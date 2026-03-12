@@ -41,3 +41,11 @@
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands"
 ;
+
+/* Custom overrides */
+
+/* Force filled disc bullets for all nested lists in page content */
+.page__content ol ul,
+.page__content ul ul {
+  list-style-type: disc;
+}
