@@ -38,249 +38,275 @@
     [.03,.51,.77,.90,.95,.99]
   ];
 
-  // ── COLOURS ───────────────────────────────────────────────────────────
+  // ── COLOUR SCHEME (matching physical device) ──────────────────────────
+  // Layer 2: uniform light-blue cells with red numbers – no traffic-light coding
   var THEME = {
-    nulliparous: { ring: '#2f7f93', center: '#2f7f93', needle: '#1a5060' },
-    multiparous: { ring: '#7b5ea7', center: '#7b5ea7', needle: '#4e3870' }
+    nulliparous: {
+      cellBg: '#c2dff0',      // light blue data cells
+      cellSel: '#a6cde6',     // slightly darker for selected sector
+      ringText: '#1a5f8c',    // blue outer-ring labels
+      wedge:  '#c2dff0',      // layer-1 wedge (same as cells)
+      arrow:  '#0d3d6b',      // dark blue arrow
+      border: '#8ab4ce',      // border lines
+      centerFg: '#1a5f8c'
+    },
+    multiparous: {
+      cellBg: '#d4c4eb',
+      cellSel: '#bcacda',
+      ringText: '#5c2d91',
+      wedge:  '#d4c4eb',
+      arrow:  '#3a1a6e',
+      border: '#a68fc4',
+      centerFg: '#5c2d91'
+    }
   };
+  var CELL_RED = '#cc0000'; // all numbers are red
 
-  function cellBg(v) {
-    if (v >= .95) return '#5a9a5a';
-    if (v >= .90) return '#a8d8a8';
-    return '#f4a0a0';
-  }
-  function cellFg(v) {
-    if (v >= .95) return '#fff';
-    if (v >= .90) return '#1a5c1a';
-    return '#7a0000';
-  }
-  function lighten(hex, amt) {
-    var r = parseInt(hex.slice(1,3),16);
-    var g = parseInt(hex.slice(3,5),16);
-    var b = parseInt(hex.slice(5,7),16);
-    return 'rgb('+Math.round(r+(255-r)*amt)+','+Math.round(g+(255-g)*amt)+','+Math.round(b+(255-b)*amt)+')';
-  }
+  // ── GEOMETRY (600 × 600) ──────────────────────────────────────────────
+  var W = 600;
+  var CX = 300, CY = 300;
+  // Layer 2 (lower wheel): outer ring R_CTR..R_OUT
+  // Layer 1 (upper wheel/wedge): covers R_CTR..R_LABEL (data rings only)
+  // Outer label ring (R_LABEL..R_OUT) is always visible – layer 2 is larger than layer 1
+  var R_OUT   = 292;   // outer edge of label ring
+  var R_LABEL = 256;   // inner edge of label ring = outer edge of data rings
+  var RING_W  = 34;    // each of the 6 data rings (6 × 34 = 204 = R_LABEL − R_CTR)
+  var R_CTR   = 52;    // centre knob radius
+  var ASTEP   = (2 * Math.PI) / N;
+  var A0      = -Math.PI / 2;
 
-  // ── GEOMETRY ──────────────────────────────────────────────────────────
-  var CX = 240, CY = 240;
-  var R_OUT = 234, R_LABEL = 205, RING_W = 27, R_CTR = 43;
-  var ASTEP = (2 * Math.PI) / N;
-  var A0 = -Math.PI / 2;
+  // Layer-1 wedge spans 8 sectors; the ARROW is at the LEFT edge (needleAngle)
+  // so the wedge extends ~8 sectors CLOCKWISE from the arrow direction.
+  var WEDGE_SECTORS = 8;
+  var WEDGE_SPAN    = ASTEP * WEDGE_SECTORS;
 
   function secAngles(i) {
     var a0 = A0 + i * ASTEP;
     return { a0: a0, a1: a0 + ASTEP, mid: a0 + ASTEP / 2 };
   }
-  function annulus(ri, ro, a0, a1) {
-    ctx.beginPath();
-    ctx.arc(CX, CY, ro, a0, a1);
-    ctx.arc(CX, CY, ri, a1, a0, true);
-    ctx.closePath();
+  // Draw an annular sector on an arbitrary 2d context
+  function arcSector(c, ri, ro, a0, a1) {
+    c.beginPath();
+    c.arc(CX, CY, ro, a0, a1);
+    c.arc(CX, CY, ri, a1, a0, true);
+    c.closePath();
   }
 
   // ── STATE ─────────────────────────────────────────────────────────────
-  var parity = 'nulliparous';
+  var parity   = 'nulliparous';
   var selected = 0;
   var needleAngle = secAngles(0).mid;
-  var isDragging = false;
+  var isDragging  = false;
 
-  canvas.width = 480;
-  canvas.height = 480;
+  canvas.width  = W;
+  canvas.height = W;
 
-  // ── DRAWING ───────────────────────────────────────────────────────────
+  // ── MAIN DRAW ─────────────────────────────────────────────────────────
   function drawWheel() {
     var data  = parity === 'nulliparous' ? NULI : MULTI;
     var theme = THEME[parity];
-    ctx.clearRect(0, 0, 480, 480);
+    ctx.clearRect(0, 0, W, W);
 
-    // ── LAYER 2: lower wheel (fixed data disc) ────────────────────────
+    // ── LAYER 2: lower data disc (always drawn in full) ───────────────
 
     // background disc
     ctx.beginPath();
-    ctx.arc(CX, CY, R_OUT, 0, 2*Math.PI);
-    ctx.fillStyle = '#f5f5f5';
+    ctx.arc(CX, CY, R_OUT, 0, 2 * Math.PI);
+    ctx.fillStyle = '#e8f4fb';
     ctx.fill();
 
-    // data rings – all 22 × 6 cells
+    // 22 × 6 colour-coded data cells – uniform light blue, no traffic-light
     for (var i = 0; i < N; i++) {
       var ang = secAngles(i);
       for (var j = 0; j < 6; j++) {
-        var ro = R_LABEL - j * RING_W;
-        var ri = ro - RING_W;
-        annulus(ri, ro, ang.a0, ang.a1);
-        ctx.fillStyle = cellBg(data[i][j]);
+        arcSector(ctx, R_LABEL - (j + 1) * RING_W, R_LABEL - j * RING_W,
+                  ang.a0, ang.a1);
+        ctx.fillStyle = (i === selected) ? theme.cellSel : theme.cellBg;
         ctx.fill();
       }
     }
 
-    // numbers in data cells
+    // red numbers in each data cell
     for (var i = 0; i < N; i++) {
       var ang = secAngles(i);
       for (var j = 0; j < 6; j++) {
         var ro   = R_LABEL - j * RING_W;
         var rMid = ro - RING_W / 2;
-        var v    = data[i][j];
         var px   = CX + rMid * Math.cos(ang.mid);
         var py   = CY + rMid * Math.sin(ang.mid);
         ctx.save();
         ctx.translate(px, py);
         ctx.rotate(ang.mid + Math.PI / 2);
-        ctx.fillStyle = cellFg(v);
-        ctx.font = 'bold ' + (j < 3 ? '9' : '8') + 'px sans-serif';
-        ctx.textAlign = 'center';
+        ctx.fillStyle = CELL_RED;
+        ctx.font = 'bold ' + (j < 3 ? '12' : '11') + 'px sans-serif';
+        ctx.textAlign    = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText(Math.round(v * 100), 0, 0);
+        ctx.fillText(Math.round(data[i][j] * 100), 0, 0);
         ctx.restore();
       }
     }
 
-    // outer label ring – highlight selected sector, rest white
-    for (var i = 0; i < N; i++) {
-      var ang = secAngles(i);
-      annulus(R_LABEL, R_OUT, ang.a0, ang.a1);
-      ctx.fillStyle = (i === selected) ? lighten(theme.ring, 0.6) : '#fff';
-      ctx.fill();
-    }
-
-    // concentric ring borders
+    // white cell borders (concentric rings)
     for (var k = 0; k <= 6; k++) {
       ctx.beginPath();
-      ctx.arc(CX, CY, R_LABEL - k*RING_W, 0, 2*Math.PI);
-      ctx.strokeStyle = 'rgba(0,0,0,.2)';
-      ctx.lineWidth = .5;
+      ctx.arc(CX, CY, R_LABEL - k * RING_W, 0, 2 * Math.PI);
+      ctx.strokeStyle = 'rgba(255,255,255,0.85)';
+      ctx.lineWidth   = 1.5;
       ctx.stroke();
     }
-    ctx.beginPath(); ctx.arc(CX,CY,R_OUT,0,2*Math.PI);
-    ctx.strokeStyle='rgba(0,0,0,.3)'; ctx.lineWidth=1; ctx.stroke();
-    ctx.beginPath(); ctx.arc(CX,CY,R_LABEL,0,2*Math.PI);
-    ctx.strokeStyle='rgba(0,0,0,.3)'; ctx.lineWidth=1; ctx.stroke();
-
-    // radial spokes
+    // white radial spokes
     for (var i = 0; i < N; i++) {
       var a = A0 + i * ASTEP;
       ctx.beginPath();
-      ctx.moveTo(CX + R_CTR*Math.cos(a), CY + R_CTR*Math.sin(a));
-      ctx.lineTo(CX + R_OUT*Math.cos(a),  CY + R_OUT*Math.sin(a));
-      ctx.strokeStyle = 'rgba(0,0,0,.2)'; ctx.lineWidth = .5; ctx.stroke();
+      ctx.moveTo(CX + R_CTR  * Math.cos(a), CY + R_CTR  * Math.sin(a));
+      ctx.lineTo(CX + R_OUT  * Math.cos(a), CY + R_OUT  * Math.sin(a));
+      ctx.strokeStyle = 'rgba(255,255,255,0.85)';
+      ctx.lineWidth   = 1.5;
+      ctx.stroke();
     }
+
+    // outer label ring – white background; tint the selected sector
+    for (var i = 0; i < N; i++) {
+      var ang = secAngles(i);
+      arcSector(ctx, R_LABEL, R_OUT, ang.a0, ang.a1);
+      ctx.fillStyle = (i === selected) ? '#ddeef7' : '#ffffff';
+      ctx.fill();
+    }
+    // outer ring border
+    ctx.beginPath(); ctx.arc(CX, CY, R_OUT,   0, 2 * Math.PI);
+    ctx.strokeStyle = theme.border; ctx.lineWidth = 2; ctx.stroke();
+    ctx.beginPath(); ctx.arc(CX, CY, R_LABEL, 0, 2 * Math.PI);
+    ctx.strokeStyle = 'rgba(255,255,255,0.85)'; ctx.lineWidth = 1.5; ctx.stroke();
 
     // time labels in outer ring
     for (var i = 0; i < N; i++) {
       var ang  = secAngles(i);
       var rMid = (R_LABEL + R_OUT) / 2;
-      var px   = CX + rMid * Math.cos(ang.mid);
-      var py   = CY + rMid * Math.sin(ang.mid);
       ctx.save();
-      ctx.translate(px, py);
+      ctx.translate(CX + rMid * Math.cos(ang.mid),
+                    CY + rMid * Math.sin(ang.mid));
       ctx.rotate(ang.mid + Math.PI / 2);
-      ctx.fillStyle = (i === selected) ? theme.needle : theme.ring;
-      ctx.font = (i === selected ? 'bold 8px' : 'bold 7.5px') + ' sans-serif';
-      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillStyle    = theme.ringText;
+      ctx.font         = (i === selected ? 'bold 9.5px' : '8.5px') + ' sans-serif';
+      ctx.textAlign    = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(LABELS[i], 0, 0);
       ctx.restore();
     }
 
-    // ── LAYER 1: upper wheel overlay (rotating opaque disc + windows) ─
-    drawUpperWheel(theme);
+    // ── LAYER 1: rotating wedge with 6 window holes ───────────────────
+    drawWedge(theme);
 
-    // needle (drawn on top of upper wheel)
-    drawNeedle(theme);
+    // arrow indicator (in the outer label ring, at the needle angle)
+    drawArrow(theme);
 
     // centre knob
-    ctx.beginPath(); ctx.arc(CX, CY, R_CTR, 0, 2*Math.PI);
-    ctx.fillStyle = theme.center; ctx.fill();
-    ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
-    ctx.fillStyle = '#fff';
-    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    ctx.font = 'bold 8px sans-serif';
-    ctx.fillText('P(SBA)', CX, CY - 7);
-    ctx.font = '7.5px sans-serif';
-    ctx.fillText(parity === 'nulliparous' ? 'Nulliparous' : 'Multiparous', CX, CY + 5);
+    ctx.beginPath(); ctx.arc(CX, CY, R_CTR, 0, 2 * Math.PI);
+    ctx.fillStyle   = '#fff'; ctx.fill();
+    ctx.strokeStyle = theme.centerFg; ctx.lineWidth = 3; ctx.stroke();
+    ctx.fillStyle    = theme.centerFg;
+    ctx.font         = 'bold 10px sans-serif';
+    ctx.textAlign    = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('P(SBA)', CX, CY - 8);
+    ctx.font = '9px sans-serif';
+    ctx.fillText(parity === 'nulliparous' ? 'Nulliparous' : 'Multiparous', CX, CY + 8);
   }
 
-  function drawUpperWheel(theme) {
-    // Render onto offscreen canvas: solid disc then punch transparent windows
+  // ── LAYER 1: wedge ────────────────────────────────────────────────────
+  // The wedge starts at (needleAngle − ASTEP/2) and extends WEDGE_SPAN clockwise.
+  // The 6 window holes are cut at the needle angle (left edge of wedge),
+  // one per concentric data ring, matching the selected sector's cells.
+  function drawWedge(theme) {
     var off = document.createElement('canvas');
-    off.width = 480; off.height = 480;
-    var octx = off.getContext('2d');
+    off.width = W; off.height = W;
+    var oc = off.getContext('2d');
 
-    // Solid coloured disc covering data rings (stops at inner edge of label ring)
-    octx.beginPath();
-    octx.arc(CX, CY, R_LABEL - 0.5, 0, 2*Math.PI);
-    octx.fillStyle = lighten(theme.center, 0.5);
-    octx.fill();
+    // Wedge boundaries
+    var wL = needleAngle - ASTEP / 2;           // left edge (where arrow is)
+    var wR = wL + WEDGE_SPAN;                    // right edge
 
-    // Punch 6 transparent windows at needleAngle, one per concentric ring
-    octx.globalCompositeOperation = 'destination-out';
-    var halfA = ASTEP * 0.46;
+    // Solid wedge (data-ring area only; outer label ring stays exposed)
+    arcSector(oc, R_CTR, R_LABEL, wL, wR);
+    oc.fillStyle = theme.wedge;
+    oc.fill();
+
+    // Punch 6 transparent window holes at the needle angle
+    oc.globalCompositeOperation = 'destination-out';
+    var hA = ASTEP * 0.46;                       // half-angle of each window
     for (var j = 0; j < 6; j++) {
-      var ro = R_LABEL - j * RING_W - 1;
-      var ri = Math.max(R_LABEL - (j + 1) * RING_W + 1, R_CTR + 2);
-      octx.beginPath();
-      octx.arc(CX, CY, ro, needleAngle - halfA, needleAngle + halfA);
-      octx.arc(CX, CY, ri, needleAngle + halfA, needleAngle - halfA, true);
-      octx.closePath();
-      octx.fill();
+      var ro = R_LABEL - j * RING_W - 2;
+      var ri = Math.max(R_LABEL - (j + 1) * RING_W + 2, R_CTR + 3);
+      arcSector(oc, ri, ro, needleAngle - hA, needleAngle + hA);
+      oc.fill();
     }
 
-    // Blit upper wheel onto main canvas
+    // Blit onto main canvas
     ctx.drawImage(off, 0, 0);
+
+    // Draw wedge outline and internal ring dividers on main canvas
+    arcSector(ctx, R_CTR, R_LABEL, wL, wR);
+    ctx.strokeStyle = theme.border; ctx.lineWidth = 1.5; ctx.stroke();
+
+    for (var k = 1; k < 6; k++) {
+      var r = R_LABEL - k * RING_W;
+      ctx.beginPath();
+      ctx.arc(CX, CY, r, wL, wR);
+      ctx.strokeStyle = 'rgba(255,255,255,0.7)'; ctx.lineWidth = 1; ctx.stroke();
+    }
   }
 
-  function drawNeedle(theme) {
+  // Arrow sits in the outer label ring pointing outward – marks the selected sector
+  function drawArrow(theme) {
     var angle = needleAngle;
-    var tipR  = R_LABEL - 4;
-    var baseR = R_CTR + 8;
-    var halfW = ASTEP * 0.28;
+    var tipR  = R_OUT - 3;
+    var baseR = R_LABEL + 4;
+    var hW    = ASTEP * 0.38;
     ctx.beginPath();
-    ctx.moveTo(CX + tipR  * Math.cos(angle),        CY + tipR  * Math.sin(angle));
-    ctx.lineTo(CX + baseR * Math.cos(angle - halfW), CY + baseR * Math.sin(angle - halfW));
-    ctx.lineTo(CX + baseR * Math.cos(angle + halfW), CY + baseR * Math.sin(angle + halfW));
+    ctx.moveTo(CX + tipR  * Math.cos(angle),       CY + tipR  * Math.sin(angle));
+    ctx.lineTo(CX + baseR * Math.cos(angle - hW),  CY + baseR * Math.sin(angle - hW));
+    ctx.lineTo(CX + baseR * Math.cos(angle + hW),  CY + baseR * Math.sin(angle + hW));
     ctx.closePath();
-    ctx.fillStyle   = 'rgba(255,255,255,0.92)'; ctx.fill();
-    ctx.strokeStyle = theme.needle; ctx.lineWidth = 1.5; ctx.stroke();
-    ctx.beginPath();
-    ctx.arc(CX + tipR * Math.cos(angle), CY + tipR * Math.sin(angle), 4, 0, 2*Math.PI);
-    ctx.fillStyle = theme.needle; ctx.fill();
+    ctx.fillStyle   = theme.arrow; ctx.fill();
+    ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.5; ctx.stroke();
   }
 
   // ── INTERACTION ────────────────────────────────────────────────────────
   function angleToSector(a) {
-    var norm = ((a - A0) % (2*Math.PI) + 2*Math.PI) % (2*Math.PI);
-    return Math.max(0, Math.min(N-1, Math.floor(norm / ASTEP)));
+    var norm = ((a - A0) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI);
+    return Math.max(0, Math.min(N - 1, Math.floor(norm / ASTEP)));
   }
-  function distFromCenter(x, y) {
-    var dx = x - CX, dy = y - CY;
-    return Math.sqrt(dx*dx + dy*dy);
+  function dist(x, y) {
+    return Math.sqrt((x - CX) * (x - CX) + (y - CY) * (y - CY));
   }
   function ptAngle(x, y) { return Math.atan2(y - CY, x - CX); }
   function canvasXY(e) {
     var rect = canvas.getBoundingClientRect();
     var src  = e.touches ? e.touches[0] : e;
     return {
-      x: (src.clientX - rect.left) * (480 / rect.width),
-      y: (src.clientY - rect.top)  * (480 / rect.height)
+      x: (src.clientX - rect.left) * (W / rect.width),
+      y: (src.clientY - rect.top)  * (W / rect.height)
     };
   }
   function snapNeedle(a) {
     var idx = angleToSector(a);
     needleAngle = secAngles(idx).mid;
-    selected = idx;
+    selected    = idx;
     drawWheel();
   }
 
-  canvas.addEventListener('mousedown', function(e) {
+  canvas.addEventListener('mousedown', function (e) {
     var p = canvasXY(e);
-    var d = distFromCenter(p.x, p.y);
+    var d = dist(p.x, p.y);
     if (d > R_OUT) return;
     if (d > R_LABEL) {
-      snapNeedle(ptAngle(p.x, p.y));
+      snapNeedle(ptAngle(p.x, p.y));  // click on outer ring → snap
     } else {
       isDragging = true;
       canvas.style.cursor = 'grabbing';
     }
   });
-  document.addEventListener('mousemove', function(e) {
+  document.addEventListener('mousemove', function (e) {
     if (!isDragging) return;
     var p = canvasXY(e);
     needleAngle = ptAngle(p.x, p.y);
@@ -288,18 +314,18 @@
     if (idx !== selected) { selected = idx; }
     drawWheel();
   });
-  document.addEventListener('mouseup', function() {
+  document.addEventListener('mouseup', function () {
     if (!isDragging) return;
     isDragging = false;
     canvas.style.cursor = 'grab';
     snapNeedle(needleAngle);
   });
-  canvas.addEventListener('touchstart', function(e) {
+  canvas.addEventListener('touchstart', function (e) {
     e.preventDefault();
     var p = canvasXY(e);
-    if (distFromCenter(p.x, p.y) <= R_OUT) { isDragging = true; }
+    if (dist(p.x, p.y) <= R_OUT) { isDragging = true; }
   }, { passive: false });
-  canvas.addEventListener('touchmove', function(e) {
+  canvas.addEventListener('touchmove', function (e) {
     e.preventDefault();
     if (!isDragging) return;
     var p = canvasXY(e);
@@ -308,7 +334,7 @@
     if (idx !== selected) { selected = idx; }
     drawWheel();
   }, { passive: false });
-  canvas.addEventListener('touchend', function() {
+  canvas.addEventListener('touchend', function () {
     if (!isDragging) return;
     isDragging = false;
     snapNeedle(needleAngle);
@@ -317,7 +343,7 @@
   // ── PARITY SWITCH ──────────────────────────────────────────────────────
   var switchBtn = document.getElementById('sbaSwitchBtn');
   if (switchBtn) {
-    switchBtn.addEventListener('click', function() {
+    switchBtn.addEventListener('click', function () {
       parity = parity === 'nulliparous' ? 'multiparous' : 'nulliparous';
       var nameEl = document.getElementById('sbaParityName');
       if (nameEl) nameEl.textContent = parity === 'nulliparous' ? 'Nulliparous' : 'Multiparous';
