@@ -41,7 +41,7 @@ author_profile: true
       </div>
     </div>
 
-    <h3>Two Implementation Tools</h3>
+    <h2>Two Implementation Tools</h2>
 
     <div class="field-accordion">
 
