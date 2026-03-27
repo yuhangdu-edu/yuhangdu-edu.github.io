@@ -44,6 +44,13 @@
 
 /* Custom overrides */
 
+/* Extend content width by removing the template's built-in right padding */
+@media (min-width: 925px) {
+  .page {
+    padding-right: 1.5em;
+  }
+}
+
 
 /* Field research tab switcher */
 .field-tabs__nav {
@@ -97,13 +104,18 @@
 .field-gallery {
   display: flex;
   gap: 1em;
-  overflow-x: auto;
+  overflow-x: scroll;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 
-  /* hide native scrollbar — custom controls used instead */
-  scrollbar-width: none;
-  &::-webkit-scrollbar { display: none; }
+  /* styled native scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #999 #d8d8d8;
+
+  &::-webkit-scrollbar { height: 8px; }
+  &::-webkit-scrollbar-track { background: #d8d8d8; border-radius: 4px; }
+  &::-webkit-scrollbar-thumb { background: #999; border-radius: 4px; }
+  &::-webkit-scrollbar-thumb:hover { background: #777; }
 }
 
 .field-gallery__item {
@@ -137,48 +149,23 @@
   line-height: 1.4;
 }
 
-/* Arrow + scrollbar control row */
+/* Arrow controls */
 .field-gallery-controls {
   display: flex;
-  align-items: center;
-  gap: 0.4em;
-  margin-top: 0.6em;
+  justify-content: space-between;
+  margin-top: 0.4em;
 }
 
 .field-gallery-arrow {
-  flex: 0 0 auto;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 0.7em;
+  font-size: 0.75em;
   color: #888;
-  padding: 0 2px;
+  padding: 0;
   line-height: 1;
 
   &:hover { color: #444; }
-}
-
-.field-gallery-track {
-  flex: 1;
-  height: 10px;
-  background: #d8d8d8;
-  border-radius: 5px;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.field-gallery-thumb {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 10px;
-  background: #999;
-  border-radius: 5px;
-  min-width: 24px;
-  transition: left 0.08s;
-
-  &:hover { background: #777; }
 }
 
 /* Field research accordion */
@@ -186,50 +173,41 @@
   margin: 1.2em 0;
 }
 
-.field-accordion__item {
+details.field-accordion__item {
   border-bottom: 1px solid var(--global-border-color);
+
+  &[open] summary .field-accordion__arrow {
+    transform: rotate(90deg);
+  }
 }
 
-.field-accordion__header {
+summary.field-accordion__header {
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.6em;
   padding: 0.75em 0;
   cursor: pointer;
   user-select: none;
   font-weight: 500;
   font-size: 1em;
   color: var(--global-link-color);
+  list-style: none;
 
-  &:hover {
-    color: var(--global-link-color-hover);
-  }
+  &::-webkit-details-marker { display: none; }
+  &::marker { display: none; }
+
+  &:hover { color: var(--global-link-color-hover); }
 }
 
 .field-accordion__arrow {
-  font-size: 0.75em;
   flex-shrink: 0;
+  font-size: 0.8em;
   transition: transform 0.25s ease;
   color: var(--global-link-color);
-
-  &.open {
-    transform: rotate(90deg);
-  }
 }
 
 .field-accordion__body {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.3s ease;
-
-  p {
-    padding-bottom: 0.75em;
-    margin: 0;
-  }
-
-  &.open {
-    max-height: 600px;
-  }
+  padding-bottom: 0.75em;
 }
 
 /* Lightbox */

@@ -41,9 +41,6 @@ author_profile: true
       </div>
       <div class="field-gallery-controls">
         <button class="field-gallery-arrow" onclick="galleryScroll('liberia-gallery', -1)">&#9664;</button>
-        <div class="field-gallery-track" id="liberia-track" onclick="galleryTrackClick(event, 'liberia-gallery')">
-          <div class="field-gallery-thumb" id="liberia-thumb"></div>
-        </div>
         <button class="field-gallery-arrow" onclick="galleryScroll('liberia-gallery', 1)">&#9654;</button>
       </div>
     </div>
@@ -52,32 +49,30 @@ author_profile: true
 
     <div class="field-accordion">
 
-      <div class="field-accordion__item">
-        <div class="field-accordion__header" onclick="toggleAccordion(this)">
-          <span class="field-accordion__arrow open">&#9658;</span>
-          <span>Tool 1: Skilled Birth Assistance (SBA) Wheel</span>
-        </div>
-        <div class="field-accordion__body open">
+      <details class="field-accordion__item" open>
+        <summary class="field-accordion__header">
+          <i class="fas fa-chevron-right field-accordion__arrow"></i>
+          Tool 1: Skilled Birth Assistance (SBA) Wheel
+        </summary>
+        <div class="field-accordion__body">
           <p>For the local clinic (individual) level, we have designed and manufactured a cardboard-based device to facilitate the calculation by nurses of the BBA risks facing individual patients, and discussion of potential interventions to mitigate them, during their antenatal consultations. This device also quantifies the reduction of BBA risk associated with potential MWH stays of different lengths, and may thus facilitate (i) the promotion of MWHs as a perinatal health intervention; and (ii) the implementation of the optimal egalitarian MWH assignment policy derived as part of our analysis.</p>
         </div>
-      </div>
+      </details>
 
-      <div class="field-accordion__item">
-        <div class="field-accordion__header" onclick="toggleAccordion(this)">
-          <span class="field-accordion__arrow">&#9658;</span>
-          <span>Tool 2: Artemis Unassisted Birth Risk Mapping System</span>
-        </div>
+      <details class="field-accordion__item">
+        <summary class="field-accordion__header">
+          <i class="fas fa-chevron-right field-accordion__arrow"></i>
+          Tool 2: Artemis Unassisted Birth Risk Mapping System
+        </summary>
         <div class="field-accordion__body">
           <p>For the national or regional (population) health administration level, we have coordinated the development of an open-access, web-based software to map and analyze birth rate, HF network and BBA risk in order to (i) identify communities facing the highest risks of BBAs and prioritize related health interventions accordingly; (ii) evaluate, generate and disseminate data-driven MWH assignment policies; and (iii) inform capacity management and facility location decisions in MWH facility networks.</p>
         </div>
-      </div>
+      </details>
 
     </div>
   </div>
 
-  <div class="field-tabs__panel" id="tab-cambridge">
-    Coming soon.
-  </div>
+  <div class="field-tabs__panel" id="tab-cambridge"><p>Coming soon.</p></div>
 </div>
 
 <div class="field-lightbox" id="field-lightbox" onclick="closeLightbox()">
@@ -86,60 +81,29 @@ author_profile: true
 </div>
 
 <script>
-(function () {
-  var buttons = document.querySelectorAll('.field-tabs__btn');
-  var panels  = document.querySelectorAll('.field-tabs__panel');
-  buttons.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      buttons.forEach(function (b) { b.classList.remove('active'); });
-      panels.forEach(function (p) { p.classList.remove('active'); });
-      btn.classList.add('active');
-      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+function showTab(tab) {
+  document.querySelectorAll('.field-tabs__btn').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-tab') === tab);
+  });
+  ['liberia', 'cambridge'].forEach(function(t) {
+    var el = document.getElementById('tab-' + t);
+    if (el) el.classList.toggle('active', t === tab);
+  });
+}
+
+(function() {
+  document.querySelectorAll('.field-tabs__btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      showTab(btn.getAttribute('data-tab'));
     });
   });
-
-  function initGallery(id) {
-    var gallery = document.getElementById(id + '-gallery');
-    if (!gallery) return;
-    gallery.addEventListener('scroll', function() { updateThumb(id); });
-    updateThumb(id);
-  }
-
-  // Init after images load so dimensions are correct
-  window.addEventListener('load', function() { initGallery('liberia'); });
-  // Also try immediately in case page is already loaded
-  initGallery('liberia');
 })();
-
-function updateThumb(id) {
-  var gallery = document.getElementById(id + '-gallery');
-  var thumb   = document.getElementById(id + '-thumb');
-  if (!gallery || !thumb) return;
-  var ratio    = gallery.clientWidth / gallery.scrollWidth;
-  var leftFrac = gallery.scrollLeft / (gallery.scrollWidth - gallery.clientWidth);
-  var track    = thumb.parentElement;
-  thumb.style.width = (ratio * track.clientWidth) + 'px';
-  thumb.style.left  = (leftFrac * (track.clientWidth - thumb.offsetWidth)) + 'px';
-}
 
 function galleryScroll(id, dir) {
   var gallery = document.getElementById(id);
-  if (gallery) gallery.scrollBy({ left: dir * 280, behavior: 'smooth' });
+  if (gallery) gallery.scrollBy({ left: dir * 400, behavior: 'smooth' });
 }
 
-function galleryTrackClick(e, id) {
-  var gallery = document.getElementById(id);
-  var track   = e.currentTarget;
-  var frac    = e.offsetX / track.clientWidth;
-  gallery.scrollLeft = frac * (gallery.scrollWidth - gallery.clientWidth);
-}
-
-function toggleAccordion(header) {
-  var arrow = header.querySelector('.field-accordion__arrow');
-  var body  = header.nextElementSibling;
-  arrow.classList.toggle('open');
-  body.classList.toggle('open');
-}
 
 function openLightbox(src) {
   document.getElementById('field-lightbox-img').src = src;
