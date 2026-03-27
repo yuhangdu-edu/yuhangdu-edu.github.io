@@ -54,8 +54,8 @@ author_profile: true
 
       <div class="field-accordion__item">
         <div class="field-accordion__header" onclick="toggleAccordion(this)">
-          <span>SBA Wheel</span>
           <span class="field-accordion__arrow open">&#9658;</span>
+          <span>Tool 1: Skilled Birth Assistance (SBA) Wheel</span>
         </div>
         <div class="field-accordion__body open">
           <p>For the local clinic (individual) level, we have designed and manufactured a cardboard-based device to facilitate the calculation by nurses of the BBA risks facing individual patients, and discussion of potential interventions to mitigate them, during their antenatal consultations. This device also quantifies the reduction of BBA risk associated with potential MWH stays of different lengths, and may thus facilitate (i) the promotion of MWHs as a perinatal health intervention; and (ii) the implementation of the optimal egalitarian MWH assignment policy derived as part of our analysis.</p>
@@ -64,8 +64,8 @@ author_profile: true
 
       <div class="field-accordion__item">
         <div class="field-accordion__header" onclick="toggleAccordion(this)">
-          <span>Artemis Software</span>
           <span class="field-accordion__arrow">&#9658;</span>
+          <span>Tool 2: Artemis Unassisted Birth Risk Mapping System</span>
         </div>
         <div class="field-accordion__body">
           <p>For the national or regional (population) health administration level, we have coordinated the development of an open-access, web-based software to map and analyze birth rate, HF network and BBA risk in order to (i) identify communities facing the highest risks of BBAs and prioritize related health interventions accordingly; (ii) evaluate, generate and disseminate data-driven MWH assignment policies; and (iii) inform capacity management and facility location decisions in MWH facility networks.</p>
