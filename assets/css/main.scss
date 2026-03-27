@@ -110,50 +110,99 @@
 }
 
 /* Field research photo gallery slider */
+.field-gallery-wrap {
+  margin: 1.5em 0;
+}
+
 .field-gallery {
   display: flex;
   gap: 1em;
-  margin: 1.5em 0;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-bottom: 0.5em;
   -webkit-overflow-scrolling: touch;
 
-  /* styled scrollbar */
-  scrollbar-width: thin;
-  scrollbar-color: var(--global-base-color) var(--global-border-color);
-
-  &::-webkit-scrollbar {
-    height: 6px;
-  }
-  &::-webkit-scrollbar-track {
-    background: var(--global-border-color);
-    border-radius: 3px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--global-base-color);
-    border-radius: 3px;
-  }
+  /* hide native scrollbar — custom controls used instead */
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
 }
 
 .field-gallery__item {
-  flex: 0 0 280px;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  flex: 0 0 260px;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
 
   img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
     display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     transition: transform 0.3s ease;
   }
 
   &:hover img {
-    transform: scale(1.04);
+    transform: scale(1.03);
   }
+}
+
+.field-gallery__caption {
+  font-size: 0.82em;
+  font-style: italic;
+  color: var(--global-text-color-light);
+  text-align: center;
+  padding: 0.5em 0.25em 0;
+  min-height: 2.8em;
+  line-height: 1.4;
+}
+
+/* Arrow + scrollbar control row */
+.field-gallery-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 0.75em;
+}
+
+.field-gallery-arrow {
+  flex: 0 0 auto;
+  background: none;
+  border: 1px solid var(--global-border-color);
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  font-size: 0.65em;
+  color: var(--global-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+
+  &:hover {
+    border-color: var(--global-base-color);
+    color: var(--global-base-color);
+  }
+}
+
+.field-gallery-track {
+  flex: 1;
+  height: 4px;
+  background: var(--global-border-color);
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+}
+
+.field-gallery-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--global-base-color);
+  border-radius: 2px;
+  transition: left 0.1s;
 }
 
 /* Field research accordion */

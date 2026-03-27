@@ -16,21 +16,35 @@ author_profile: true
     <p>I visited Liberia in July, 2025.</p>
     <p>Implementation Tools: I and our team have developed two related tools to facilitate the implementation of this research by practitioners at both individual and population health levels. During the fieldwork, our team led a two-day workshop.</p>
 
-    <div class="field-gallery">
-      <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/workshop.JPG')">
-        <img src="/images/Liberia/workshop.JPG" alt="Workshop in Liberia" />
+    <div class="field-gallery-wrap">
+      <div class="field-gallery" id="liberia-gallery">
+        <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/workshop.JPG')">
+          <img src="/images/Liberia/workshop.JPG" alt="Workshop in Liberia" />
+          <div class="field-gallery__caption"></div>
+        </div>
+        <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/CHT.JPG')">
+          <img src="/images/Liberia/CHT.JPG" alt="CHT Liberia" />
+          <div class="field-gallery__caption"></div>
+        </div>
+        <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/CA_map.png')">
+          <img src="/images/Liberia/CA_map.png" alt="CA Map" />
+          <div class="field-gallery__caption"></div>
+        </div>
+        <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/MWH_1.png')">
+          <img src="/images/Liberia/MWH_1.png" alt="MWH" />
+          <div class="field-gallery__caption"></div>
+        </div>
+        <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/room.png')">
+          <img src="/images/Liberia/room.png" alt="Room" />
+          <div class="field-gallery__caption"></div>
+        </div>
       </div>
-      <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/CHT.JPG')">
-        <img src="/images/Liberia/CHT.JPG" alt="CHT Liberia" />
-      </div>
-      <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/CA_map.png')">
-        <img src="/images/Liberia/CA_map.png" alt="CA Map" />
-      </div>
-      <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/MWH_1.png')">
-        <img src="/images/Liberia/MWH_1.png" alt="MWH" />
-      </div>
-      <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/room.png')">
-        <img src="/images/Liberia/room.png" alt="Room" />
+      <div class="field-gallery-controls">
+        <button class="field-gallery-arrow" onclick="galleryScroll('liberia-gallery', -1)">&#9664;</button>
+        <div class="field-gallery-track" id="liberia-track" onclick="galleryTrackClick(event, 'liberia-gallery')">
+          <div class="field-gallery-thumb" id="liberia-thumb"></div>
+        </div>
+        <button class="field-gallery-arrow" onclick="galleryScroll('liberia-gallery', 1)">&#9654;</button>
       </div>
     </div>
 
@@ -83,7 +97,39 @@ author_profile: true
       document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     });
   });
+
+  // Init gallery scrollbar thumbs
+  ['liberia'].forEach(function(id) {
+    var gallery = document.getElementById(id + '-gallery');
+    if (gallery) {
+      gallery.addEventListener('scroll', function() { updateThumb(id); });
+      updateThumb(id);
+    }
+  });
 })();
+
+function updateThumb(id) {
+  var gallery = document.getElementById(id + '-gallery');
+  var thumb   = document.getElementById(id + '-thumb');
+  if (!gallery || !thumb) return;
+  var ratio    = gallery.clientWidth / gallery.scrollWidth;
+  var leftFrac = gallery.scrollLeft / (gallery.scrollWidth - gallery.clientWidth);
+  var track    = thumb.parentElement;
+  thumb.style.width = (ratio * track.clientWidth) + 'px';
+  thumb.style.left  = (leftFrac * (track.clientWidth - thumb.offsetWidth)) + 'px';
+}
+
+function galleryScroll(id, dir) {
+  var gallery = document.getElementById(id);
+  if (gallery) gallery.scrollBy({ left: dir * 280, behavior: 'smooth' });
+}
+
+function galleryTrackClick(e, id) {
+  var gallery = document.getElementById(id);
+  var track   = e.currentTarget;
+  var frac    = e.offsetX / track.clientWidth;
+  gallery.scrollLeft = frac * (gallery.scrollWidth - gallery.clientWidth);
+}
 
 function toggleAccordion(header) {
   var arrow = header.querySelector('.field-accordion__arrow');

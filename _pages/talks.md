@@ -7,8 +7,8 @@ author_profile: true
 
 **Optimal Assignment Guidelines for Maternity Waiting Homes in Resource-Constrained Environments**
 
-- *(Scheduled)* INFORMS Healthcare Conference \| Raleigh, NC \| 2026
-- *(Scheduled)* POMS Annual Meeting \| Reno, NV \| 2026
+- *(Scheduled)* INFORMS Healthcare Conference \| Raleigh, NC \| July 2026
+- *(Scheduled)* POMS Annual Meeting \| Reno, NV \| May 2026
 - POMS-HK International Conference \| Shenzhen, China \| January 2026
 - INFORMS Annual Meeting \| Atlanta, GA \| October 2025
 - MSOM Healthcare SIG \| London, UK \| June 2025
@@ -19,6 +19,6 @@ author_profile: true
 
 **Balancing Fairness and Efficiency in Scheduling for Maternity Care**
 
-- *(Scheduled)* INFORMS Healthcare Conference \| Raleigh, NC \| 2026
-- *(Scheduled)* POMS Annual Meeting \| Reno, NV \| 2026
+- *(Scheduled)* INFORMS Healthcare Conference \| Raleigh, NC \| July 2026
+- *(Scheduled)* POMS Annual Meeting \| Reno, NV \| May 2026
 - POMS-HK International Conference \| Shenzhen, China \| January 2026
