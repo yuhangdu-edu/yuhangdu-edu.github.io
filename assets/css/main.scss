@@ -47,44 +47,109 @@
 /* Field research tab switcher */
 .field-tabs__nav {
   display: flex;
-  gap: 0;
-  margin: 1.5em 0 0;
-  border-bottom: 2px solid var(--global-border-color);
+  gap: 1.25em;
+  margin: 1.5em 0 2em;
+  flex-wrap: wrap;
 }
 
 .field-tabs__btn {
   flex: 1;
-  padding: 0.75em 1em;
+  min-width: 160px;
+  padding: 1.2em 1em;
   background: none;
-  border: none;
-  border-bottom: 3px solid transparent;
-  margin-bottom: -2px;
+  border: 2px solid var(--global-border-color);
+  border-radius: 8px;
   cursor: pointer;
   font-family: inherit;
-  font-size: 0.9em;
+  font-size: 0.95em;
   font-weight: 600;
-  color: var(--global-text-color-light);
+  color: var(--global-text-color);
   text-align: center;
-  transition: color 0.2s, border-color 0.2s;
   line-height: 1.4;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
 
-  &:hover {
+  &:hover:not(.active) {
+    border-color: var(--global-base-color);
     color: var(--global-base-color);
   }
 
   &.active {
-    color: var(--global-base-color);
-    border-bottom-color: var(--global-base-color);
+    background-color: var(--global-base-color);
+    border-color: var(--global-base-color);
+    color: #fff;
   }
 }
 
 .field-tabs__panel {
   display: none;
-  padding-top: 2em;
 
   &.active {
     display: block;
   }
+}
+
+/* Field research photo gallery */
+.field-gallery {
+  display: flex;
+  gap: 1em;
+  margin: 1.5em 0;
+  flex-wrap: wrap;
+}
+
+.field-gallery__item {
+  flex: 1 1 calc(50% - 0.5em);
+  min-width: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  cursor: pointer;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+}
+
+/* Lightbox */
+.field-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+
+  &.open {
+    display: flex;
+  }
+
+  img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  }
+}
+
+.field-lightbox__close {
+  position: absolute;
+  top: 1.2em;
+  right: 1.5em;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  cursor: pointer;
+  line-height: 1;
 }
 
 /* Force filled disc bullets for all nested lists in page content */
