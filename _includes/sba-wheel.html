@@ -5,24 +5,17 @@
 .sba-switch-btn{padding:.45em 1.1em;border-radius:20px;border:2px solid #888;background:none;cursor:pointer;font-family:inherit;font-size:.88em;transition:background .15s,border-color .15s}
 .sba-switch-btn:hover{background:#eee;border-color:#555}
 .sba-body{display:flex;gap:1.5em;align-items:flex-start;flex-wrap:wrap;justify-content:center}
-#sbaCanvas{display:block;width:480px;height:480px;max-width:100%;flex-shrink:0}
-.sba-readout{flex:1;min-width:210px;max-width:300px;border:1px solid #ddd;border-radius:8px;padding:.9em 1em;background:#fafafa;font-size:.88em}
-.sba-readout-title{font-weight:700;margin:0 0 .6em;padding-bottom:.45em;border-bottom:2px solid #ddd}
-.sba-readout-hint{color:#888;font-style:italic;text-align:center;padding:1em 0}
-.sba-row{display:flex;justify-content:space-between;align-items:center;padding:.3em 0;border-bottom:1px solid #eee}
-.sba-row:last-child{border-bottom:none}
-.sba-scenario{color:#444;flex:1}
-.sba-pct{font-weight:700;padding:.12em .45em;border-radius:4px;min-width:2.2em;text-align:center}
-.sba-salmon{background:#f4a0a0;color:#7a0000}
-.sba-lgreen{background:#a8d8a8;color:#1a5c1a}
-.sba-dgreen{background:#5a9a5a;color:#fff}
-.sba-legend{display:flex;gap:1em;flex-wrap:wrap;margin-top:.7em;justify-content:center;font-size:.8em;color:#555}
-.sba-legend-item{display:inline-flex;align-items:center;gap:.35em}
+#sbaCanvas{display:block;width:480px;height:480px;max-width:100%;flex-shrink:0;cursor:grab}
+.sba-ring-guide{flex:1;min-width:180px;max-width:260px;border:1px solid #ddd;border-radius:8px;padding:.9em 1em;background:#fafafa;font-size:.85em}
+.sba-rg-title{font-weight:700;margin:0 0 .45em;padding-bottom:.35em;border-bottom:2px solid #ddd;font-size:.88em}
+.sba-rg-row{display:flex;align-items:center;gap:.45em;padding:.2em 0;color:#444;font-size:.82em}
+.sba-rg-num{font-weight:700;color:#777;flex-shrink:0;min-width:1.1em;text-align:right}
+.sba-rg-sep{border-top:1px solid #eee;margin:.5em 0}
 .sba-dot{width:11px;height:11px;border-radius:2px;display:inline-block;flex-shrink:0}
+.sba-rg-hint{color:#888;font-style:italic;font-size:.8em;margin-top:.5em;line-height:1.4}
 </style>
 <div class="sba-wrap">
 <div class="sba-header"><span class="sba-parity-name" id="sbaParityName">Nulliparous</span><button class="sba-switch-btn" id="sbaSwitchBtn">Switch to Multiparous</button></div>
-<div class="sba-body"><canvas id="sbaCanvas" width="480" height="480"></canvas><div class="sba-readout" id="sbaReadout"><div class="sba-readout-hint">Drag the needle or click a sector to view P(SBA) values</div></div></div>
-<div class="sba-legend"><span class="sba-legend-item"><span class="sba-dot" style="background:#f4a0a0"></span>P(SBA) &lt; 90%</span><span class="sba-legend-item"><span class="sba-dot" style="background:#a8d8a8"></span>90% &#8804; P(SBA) &lt; 95%</span><span class="sba-legend-item"><span class="sba-dot" style="background:#5a9a5a"></span>P(SBA) &#8805; 95%</span></div>
+<div class="sba-body"><canvas id="sbaCanvas" width="480" height="480"></canvas><div class="sba-ring-guide"><div class="sba-rg-title">Windows (outer &#8594; inner)</div><div class="sba-rg-row"><span class="sba-rg-num">&#9312;</span><span>No MWH stay</span></div><div class="sba-rg-row"><span class="sba-rg-num">&#9313;</span><span>Move to MWH on EDD</span></div><div class="sba-rg-row"><span class="sba-rg-num">&#9314;</span><span>Move 1&#8239;wk before EDD</span></div><div class="sba-rg-row"><span class="sba-rg-num">&#9315;</span><span>Move 2&#8239;wks before EDD</span></div><div class="sba-rg-row"><span class="sba-rg-num">&#9316;</span><span>Move 3&#8239;wks before EDD</span></div><div class="sba-rg-row"><span class="sba-rg-num">&#9317;</span><span>Move 4&#8239;wks before EDD</span></div><div class="sba-rg-sep"></div><div class="sba-rg-title">P(SBA) colour scale</div><div class="sba-rg-row"><span class="sba-dot" style="background:#f4a0a0"></span><span>P(SBA) &lt; 90%</span></div><div class="sba-rg-row"><span class="sba-dot" style="background:#a8d8a8"></span><span>90% &#8804; P(SBA) &lt; 95%</span></div><div class="sba-rg-row"><span class="sba-dot" style="background:#5a9a5a"></span><span>P(SBA) &#8805; 95%</span></div><div class="sba-rg-sep"></div><p class="sba-rg-hint">Drag the wheel or click the outer ring to select a travel time to the nearest health facility.</p></div></div>
 </div>
 <script src="/assets/js/sba-wheel.js"></script>

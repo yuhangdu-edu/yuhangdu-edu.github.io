@@ -12,14 +12,6 @@
     '9\u20139.5h','9.5\u201310h','10\u201310.5h','10.5\u201311h',
     '11\u201311.5h','11.5\u201312h','12+h'
   ];
-  var SCENARIOS = [
-    'No MWH stay',
-    'Move to MWH on EDD',
-    'Move 1 wk before EDD',
-    'Move 2 wks before EDD',
-    'Move 3 wks before EDD',
-    'Move 4 wks before EDD'
-  ];
   var N = 22;
 
   // Table 1 – Nulliparous [row = time interval, col = scenario]
@@ -46,10 +38,10 @@
     [.03,.51,.77,.90,.95,.99]
   ];
 
-  // ── COLORS ────────────────────────────────────────────────────────────
+  // ── COLOURS ───────────────────────────────────────────────────────────
   var THEME = {
     nulliparous: { ring: '#2f7f93', center: '#2f7f93', needle: '#1a5060' },
-    multiparous:  { ring: '#7b5ea7', center: '#7b5ea7', needle: '#4e3870' }
+    multiparous: { ring: '#7b5ea7', center: '#7b5ea7', needle: '#4e3870' }
   };
 
   function cellBg(v) {
@@ -79,18 +71,6 @@
     var a0 = A0 + i * ASTEP;
     return { a0: a0, a1: a0 + ASTEP, mid: a0 + ASTEP / 2 };
   }
-
-  // ── STATE ─────────────────────────────────────────────────────────────
-  var parity = 'nulliparous';
-  var selected = 0;
-  var needleAngle = secAngles(0).mid;
-  var isDragging = false;
-
-  // ── CANVAS SETUP ──────────────────────────────────────────────────────
-  canvas.width = 480;
-  canvas.height = 480;
-
-  // ── DRAWING ───────────────────────────────────────────────────────────
   function annulus(ri, ro, a0, a1) {
     ctx.beginPath();
     ctx.arc(CX, CY, ro, a0, a1);
@@ -98,10 +78,22 @@
     ctx.closePath();
   }
 
+  // ── STATE ─────────────────────────────────────────────────────────────
+  var parity = 'nulliparous';
+  var selected = 0;
+  var needleAngle = secAngles(0).mid;
+  var isDragging = false;
+
+  canvas.width = 480;
+  canvas.height = 480;
+
+  // ── DRAWING ───────────────────────────────────────────────────────────
   function drawWheel() {
     var data  = parity === 'nulliparous' ? NULI : MULTI;
     var theme = THEME[parity];
     ctx.clearRect(0, 0, 480, 480);
+
+    // ── LAYER 2: lower wheel (fixed data disc) ────────────────────────
 
     // background disc
     ctx.beginPath();
@@ -109,28 +101,48 @@
     ctx.fillStyle = '#f5f5f5';
     ctx.fill();
 
-    // sectors
+    // data rings – all 22 × 6 cells
     for (var i = 0; i < N; i++) {
-      var ang   = secAngles(i);
-      var isSel = (i === selected);
-
-      // label ring
-      annulus(R_LABEL, R_OUT, ang.a0, ang.a1);
-      ctx.fillStyle = isSel ? lighten(theme.ring, .35) : theme.ring;
-      ctx.fill();
-
-      // 6 data rings
+      var ang = secAngles(i);
       for (var j = 0; j < 6; j++) {
         var ro = R_LABEL - j * RING_W;
         var ri = ro - RING_W;
-        var v  = data[i][j];
         annulus(ri, ro, ang.a0, ang.a1);
-        ctx.fillStyle = isSel ? lighten(cellBg(v), .25) : cellBg(v);
+        ctx.fillStyle = cellBg(data[i][j]);
         ctx.fill();
       }
     }
 
-    // concentric borders
+    // numbers in data cells
+    for (var i = 0; i < N; i++) {
+      var ang = secAngles(i);
+      for (var j = 0; j < 6; j++) {
+        var ro   = R_LABEL - j * RING_W;
+        var rMid = ro - RING_W / 2;
+        var v    = data[i][j];
+        var px   = CX + rMid * Math.cos(ang.mid);
+        var py   = CY + rMid * Math.sin(ang.mid);
+        ctx.save();
+        ctx.translate(px, py);
+        ctx.rotate(ang.mid + Math.PI / 2);
+        ctx.fillStyle = cellFg(v);
+        ctx.font = 'bold ' + (j < 3 ? '9' : '8') + 'px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(Math.round(v * 100), 0, 0);
+        ctx.restore();
+      }
+    }
+
+    // outer label ring – highlight selected sector, rest white
+    for (var i = 0; i < N; i++) {
+      var ang = secAngles(i);
+      annulus(R_LABEL, R_OUT, ang.a0, ang.a1);
+      ctx.fillStyle = (i === selected) ? lighten(theme.ring, 0.6) : '#fff';
+      ctx.fill();
+    }
+
+    // concentric ring borders
     for (var k = 0; k <= 6; k++) {
       ctx.beginPath();
       ctx.arc(CX, CY, R_LABEL - k*RING_W, 0, 2*Math.PI);
@@ -152,27 +164,7 @@
       ctx.strokeStyle = 'rgba(0,0,0,.2)'; ctx.lineWidth = .5; ctx.stroke();
     }
 
-    // numbers in data cells
-    for (var i = 0; i < N; i++) {
-      var ang = secAngles(i);
-      for (var j = 0; j < 6; j++) {
-        var ro   = R_LABEL - j * RING_W;
-        var rMid = ro - RING_W / 2;
-        var v    = data[i][j];
-        var px   = CX + rMid * Math.cos(ang.mid);
-        var py   = CY + rMid * Math.sin(ang.mid);
-        ctx.save();
-        ctx.translate(px, py);
-        ctx.rotate(ang.mid + Math.PI / 2);
-        ctx.fillStyle = cellFg(v);
-        ctx.font = 'bold ' + (j < 3 ? '9' : '8') + 'px sans-serif';
-        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-        ctx.fillText(Math.round(v * 100), 0, 0);
-        ctx.restore();
-      }
-    }
-
-    // time labels in label ring
+    // time labels in outer ring
     for (var i = 0; i < N; i++) {
       var ang  = secAngles(i);
       var rMid = (R_LABEL + R_OUT) / 2;
@@ -181,31 +173,58 @@
       ctx.save();
       ctx.translate(px, py);
       ctx.rotate(ang.mid + Math.PI / 2);
-      ctx.fillStyle = '#fff';
-      ctx.font = 'bold 7.5px sans-serif';
+      ctx.fillStyle = (i === selected) ? theme.needle : theme.ring;
+      ctx.font = (i === selected ? 'bold 8px' : 'bold 7.5px') + ' sans-serif';
       ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
       ctx.fillText(LABELS[i], 0, 0);
       ctx.restore();
     }
 
-    // selected sector highlight
-    if (selected !== null) {
-      var ang = secAngles(selected);
-      annulus(R_CTR, R_OUT, ang.a0, ang.a1);
-      ctx.strokeStyle = theme.ring; ctx.lineWidth = 3.5; ctx.stroke();
-    }
+    // ── LAYER 1: upper wheel overlay (rotating opaque disc + windows) ─
+    drawUpperWheel(theme);
 
-    // needle
+    // needle (drawn on top of upper wheel)
     drawNeedle(theme);
 
     // centre knob
     ctx.beginPath(); ctx.arc(CX, CY, R_CTR, 0, 2*Math.PI);
     ctx.fillStyle = theme.center; ctx.fill();
     ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
-    ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    ctx.font = 'bold 8px sans-serif'; ctx.fillText('P(SBA)', CX, CY - 7);
+    ctx.fillStyle = '#fff';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.font = 'bold 8px sans-serif';
+    ctx.fillText('P(SBA)', CX, CY - 7);
     ctx.font = '7.5px sans-serif';
     ctx.fillText(parity === 'nulliparous' ? 'Nulliparous' : 'Multiparous', CX, CY + 5);
+  }
+
+  function drawUpperWheel(theme) {
+    // Render onto offscreen canvas: solid disc then punch transparent windows
+    var off = document.createElement('canvas');
+    off.width = 480; off.height = 480;
+    var octx = off.getContext('2d');
+
+    // Solid coloured disc covering data rings (stops at inner edge of label ring)
+    octx.beginPath();
+    octx.arc(CX, CY, R_LABEL - 0.5, 0, 2*Math.PI);
+    octx.fillStyle = lighten(theme.center, 0.5);
+    octx.fill();
+
+    // Punch 6 transparent windows at needleAngle, one per concentric ring
+    octx.globalCompositeOperation = 'destination-out';
+    var halfA = ASTEP * 0.46;
+    for (var j = 0; j < 6; j++) {
+      var ro = R_LABEL - j * RING_W - 1;
+      var ri = Math.max(R_LABEL - (j + 1) * RING_W + 1, R_CTR + 2);
+      octx.beginPath();
+      octx.arc(CX, CY, ro, needleAngle - halfA, needleAngle + halfA);
+      octx.arc(CX, CY, ri, needleAngle + halfA, needleAngle - halfA, true);
+      octx.closePath();
+      octx.fill();
+    }
+
+    // Blit upper wheel onto main canvas
+    ctx.drawImage(off, 0, 0);
   }
 
   function drawNeedle(theme) {
@@ -248,7 +267,6 @@
     needleAngle = secAngles(idx).mid;
     selected = idx;
     drawWheel();
-    updateReadout();
   }
 
   canvas.addEventListener('mousedown', function(e) {
@@ -267,7 +285,7 @@
     var p = canvasXY(e);
     needleAngle = ptAngle(p.x, p.y);
     var idx = angleToSector(needleAngle);
-    if (idx !== selected) { selected = idx; updateReadout(); }
+    if (idx !== selected) { selected = idx; }
     drawWheel();
   });
   document.addEventListener('mouseup', function() {
@@ -287,7 +305,7 @@
     var p = canvasXY(e);
     needleAngle = ptAngle(p.x, p.y);
     var idx = angleToSector(needleAngle);
-    if (idx !== selected) { selected = idx; updateReadout(); }
+    if (idx !== selected) { selected = idx; }
     drawWheel();
   }, { passive: false });
   canvas.addEventListener('touchend', function() {
@@ -295,23 +313,6 @@
     isDragging = false;
     snapNeedle(needleAngle);
   });
-
-  // ── READOUT ────────────────────────────────────────────────────────────
-  function updateReadout() {
-    var el = document.getElementById('sbaReadout');
-    if (!el) return;
-    var data = parity === 'nulliparous' ? NULI : MULTI;
-    var row  = data[selected];
-    var html = '<div class="sba-readout-title">Time to SBA: ' + LABELS[selected] + '</div>';
-    for (var j = 0; j < 6; j++) {
-      var v   = row[j];
-      var pct = Math.round(v * 100);
-      var cls = v >= .95 ? 'sba-dgreen' : (v >= .90 ? 'sba-lgreen' : 'sba-salmon');
-      html += '<div class="sba-row"><span class="sba-scenario">' + SCENARIOS[j] +
-              '</span><span class="sba-pct ' + cls + '">' + pct + '%</span></div>';
-    }
-    el.innerHTML = html;
-  }
 
   // ── PARITY SWITCH ──────────────────────────────────────────────────────
   var switchBtn = document.getElementById('sbaSwitchBtn');
@@ -322,12 +323,10 @@
       if (nameEl) nameEl.textContent = parity === 'nulliparous' ? 'Nulliparous' : 'Multiparous';
       this.textContent = parity === 'nulliparous' ? 'Switch to Multiparous' : 'Switch to Nulliparous';
       drawWheel();
-      updateReadout();
     });
   }
 
   // ── INIT ───────────────────────────────────────────────────────────────
   canvas.style.cursor = 'grab';
   drawWheel();
-  updateReadout();
 })();
