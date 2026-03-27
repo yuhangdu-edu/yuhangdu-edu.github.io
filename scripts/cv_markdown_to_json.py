@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 Script to convert markdown CV to JSON format
-Author: Yuan Chen
 """
 
 import os

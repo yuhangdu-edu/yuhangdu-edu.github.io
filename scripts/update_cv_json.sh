@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Script to update the CV JSON file from the markdown CV
-# Author: Yuan Chen
 
 # Set the base directory to the repository root
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"

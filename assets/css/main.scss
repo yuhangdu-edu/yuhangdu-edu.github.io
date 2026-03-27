@@ -44,23 +44,6 @@
 
 /* Custom overrides */
 
-/* Content area — match Yuan Shi's layout width */
-@media (min-width: 925px) {
-  .page {
-    float: none;
-    width: auto;
-    max-width: 900px;
-    margin-left: 220px;
-    margin-right: auto;
-    padding-right: 1.5em;
-  }
-}
-
-@media (min-width: 1280px) {
-  .page {
-    margin-left: 270px;
-  }
-}
 
 /* Field research tab switcher */
 .field-tabs__nav {
@@ -124,14 +107,14 @@
 }
 
 .field-gallery__item {
-  flex: 0 0 260px;
+  flex: 0 0 380px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
 
   img {
     width: 100%;
-    height: 220px;
+    height: 280px;
     object-fit: cover;
     display: block;
     border-radius: 8px;
@@ -158,48 +141,44 @@
 .field-gallery-controls {
   display: flex;
   align-items: center;
-  gap: 0.5em;
-  margin-top: 0.75em;
+  gap: 0.4em;
+  margin-top: 0.6em;
 }
 
 .field-gallery-arrow {
   flex: 0 0 auto;
   background: none;
-  border: 1px solid var(--global-border-color);
-  border-radius: 50%;
-  width: 26px;
-  height: 26px;
+  border: none;
   cursor: pointer;
-  font-size: 0.65em;
-  color: var(--global-text-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color 0.2s, color 0.2s;
+  font-size: 0.7em;
+  color: #888;
+  padding: 0 2px;
+  line-height: 1;
 
-  &:hover {
-    border-color: var(--global-base-color);
-    color: var(--global-base-color);
-  }
+  &:hover { color: #444; }
 }
 
 .field-gallery-track {
   flex: 1;
-  height: 4px;
-  background: var(--global-border-color);
-  border-radius: 2px;
+  height: 10px;
+  background: #d8d8d8;
+  border-radius: 5px;
   position: relative;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .field-gallery-thumb {
   position: absolute;
   top: 0;
   left: 0;
-  height: 4px;
-  background: var(--global-base-color);
-  border-radius: 2px;
-  transition: left 0.1s;
+  height: 10px;
+  background: #999;
+  border-radius: 5px;
+  min-width: 24px;
+  transition: left 0.08s;
+
+  &:hover { background: #777; }
 }
 
 /* Field research accordion */

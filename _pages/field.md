@@ -98,14 +98,17 @@ author_profile: true
     });
   });
 
-  // Init gallery scrollbar thumbs
-  ['liberia'].forEach(function(id) {
+  function initGallery(id) {
     var gallery = document.getElementById(id + '-gallery');
-    if (gallery) {
-      gallery.addEventListener('scroll', function() { updateThumb(id); });
-      updateThumb(id);
-    }
-  });
+    if (!gallery) return;
+    gallery.addEventListener('scroll', function() { updateThumb(id); });
+    updateThumb(id);
+  }
+
+  // Init after images load so dimensions are correct
+  window.addEventListener('load', function() { initGallery('liberia'); });
+  // Also try immediately in case page is already loaded
+  initGallery('liberia');
 })();
 
 function updateThumb(id) {
