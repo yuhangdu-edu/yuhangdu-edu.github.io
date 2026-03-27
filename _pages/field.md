@@ -52,6 +52,7 @@ author_profile: true
         </summary>
         <div class="field-accordion__body">
           <p>For the local clinic (individual) level, we have designed and manufactured a cardboard-based device to facilitate the calculation by nurses of the BBA risks facing individual patients, and discussion of potential interventions to mitigate them, during their antenatal consultations. This device also quantifies the reduction of BBA risk associated with potential MWH stays of different lengths, and may thus facilitate (i) the promotion of MWHs as a perinatal health intervention; and (ii) the implementation of the optimal egalitarian MWH assignment policy derived as part of our analysis.</p>
+          {% include sba-wheel.html %}
         </div>
       </details>
 
