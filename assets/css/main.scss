@@ -44,17 +44,14 @@
 
 /* Custom overrides */
 
-/* Wider content area — fill available space beside the fixed sidebar */
+/* Content area — match Yuan Shi's layout width */
 @media (min-width: 925px) {
-  #main {
-    max-width: 1600px;
-  }
-
   .page {
     float: none;
     width: auto;
+    max-width: 760px;
     margin-left: 220px;
-    margin-right: 0;
+    margin-right: auto;
     padding-right: 1.5em;
   }
 }
