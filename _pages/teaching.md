@@ -12,6 +12,8 @@ author_profile: true
 - AM13 Decision Analytics & Modelling ([MAM core](https://www.london.edu/masters-degrees/masters-in-analytics-and-management/programme-content/core-courses)): Spring 2023, 2024, 2025.
 - AM04 Data Science for Business I & II ([MAM core](https://www.london.edu/masters-degrees/masters-in-analytics-and-management/programme-content/core-courses)): Fall 2022, 2023, 2024.
 
+---
+
 ## Teaching Assistant, Shanghai University of Finance and Economics
 
 - Stochastic Processes: Fall 2020.

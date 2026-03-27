@@ -23,10 +23,42 @@ author_profile: true
       <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/CHT.JPG')">
         <img src="/images/Liberia/CHT.JPG" alt="CHT Liberia" />
       </div>
+      <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/CA_map.png')">
+        <img src="/images/Liberia/CA_map.png" alt="CA Map" />
+      </div>
+      <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/MWH_1.png')">
+        <img src="/images/Liberia/MWH_1.png" alt="MWH" />
+      </div>
+      <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/room.png')">
+        <img src="/images/Liberia/room.png" alt="Room" />
+      </div>
     </div>
 
     <p><strong>Two Implementation Tools</strong></p>
-    <p>For the local clinic (individual) level, we have designed and manufactured a cardboard-based device to facilitate the calculation by nurses of the BBA risks facing individual patients, and discussion of potential interventions to mitigate them, during their antenatal consultations. This device also quantifies the reduction of BBA risk associated with potential MWH stays of different lengths, and may thus facilitate (i) the promotion of MWHs as a perinatal health intervention; and (ii) the implementation of the optimal egalitarian MWH assignment policy derived as part of our analysis.</p>
+
+    <div class="field-accordion">
+
+      <div class="field-accordion__item">
+        <div class="field-accordion__header" onclick="toggleAccordion(this)">
+          <span>SBA Wheel</span>
+          <span class="field-accordion__arrow open">&#9658;</span>
+        </div>
+        <div class="field-accordion__body open">
+          <p>For the local clinic (individual) level, we have designed and manufactured a cardboard-based device to facilitate the calculation by nurses of the BBA risks facing individual patients, and discussion of potential interventions to mitigate them, during their antenatal consultations. This device also quantifies the reduction of BBA risk associated with potential MWH stays of different lengths, and may thus facilitate (i) the promotion of MWHs as a perinatal health intervention; and (ii) the implementation of the optimal egalitarian MWH assignment policy derived as part of our analysis.</p>
+        </div>
+      </div>
+
+      <div class="field-accordion__item">
+        <div class="field-accordion__header" onclick="toggleAccordion(this)">
+          <span>Artemis Software</span>
+          <span class="field-accordion__arrow">&#9658;</span>
+        </div>
+        <div class="field-accordion__body">
+          <p>For the national or regional (population) health administration level, we have coordinated the development of an open-access, web-based software to map and analyze birth rate, HF network and BBA risk in order to (i) identify communities facing the highest risks of BBAs and prioritize related health interventions accordingly; (ii) evaluate, generate and disseminate data-driven MWH assignment policies; and (iii) inform capacity management and facility location decisions in MWH facility networks.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <div class="field-tabs__panel" id="tab-cambridge">
@@ -52,6 +84,13 @@ author_profile: true
     });
   });
 })();
+
+function toggleAccordion(header) {
+  var arrow = header.querySelector('.field-accordion__arrow');
+  var body  = header.nextElementSibling;
+  arrow.classList.toggle('open');
+  body.classList.toggle('open');
+}
 
 function openLightbox(src) {
   document.getElementById('field-lightbox-img').src = src;
