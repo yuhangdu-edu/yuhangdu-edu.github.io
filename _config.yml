@@ -23,7 +23,7 @@ repository               : "yuhangdu-edu/yuhangdu-edu.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "Yuhang Du"
   pronouns         : # example: "she/her"  
   bio              : "PhD candidate, Management Science and Operations, London Business School"
