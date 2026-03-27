@@ -39,13 +39,9 @@ author_profile: true
           <div class="field-gallery__caption"></div>
         </div>
       </div>
-      <div class="field-gallery-controls">
-        <button class="field-gallery-arrow" onclick="galleryScroll('liberia-gallery', -1)">&#9664;</button>
-        <button class="field-gallery-arrow" onclick="galleryScroll('liberia-gallery', 1)">&#9654;</button>
-      </div>
     </div>
 
-    <p><strong>Two Implementation Tools</strong></p>
+    <h3>Two Implementation Tools</h3>
 
     <div class="field-accordion">
 
