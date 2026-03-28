@@ -149,42 +149,53 @@ def apply_disc_mask(img_arr):
 
     result[:, :, 3] = alpha
 
-    # Punch 6 transparent holes (core area)
+    # Punch 6 transparent square holes (use max(w,h) so each hole is square)
     for (cx, cy, w, h) in HOLES:
-        x0 = max(0, int(cx - w / 2) - 2)
-        y0 = max(0, int(cy - h / 2) - 2)
-        x1 = min(W, int(cx + w / 2) + 2)
-        y1 = min(H, int(cy + h / 2) + 2)
+        side = max(w, h)
+        x0 = max(0, int(cx - side / 2) - 2)
+        y0 = max(0, int(cy - side / 2) - 2)
+        x1 = min(W, int(cx + side / 2) + 2)
+        y1 = min(H, int(cy + side / 2) + 2)
         result[y0:y1, x0:x1, 3] = 0
 
-    # Flood-fill outward from each transparent hole through connected near-white pixels.
-    # PowerPoint renders shadow/glow effects that extend ~30px beyond shape bounds,
-    # leaving visible white borders around holes. Seed only from inner-disc holes
-    # (r < R_INNER), not from the outer transparent ring. The colored sectors
-    # (blue/teal, R < 230) act as natural barriers so fill stays within the fills.
-    WHITE_THRESH = 230  # pixels with all channels > this are "near-white fills"
+    # Pass 1 — flood-fill connected white fills from hole seeds.
+    # PowerPoint renders shadow/glow effects ~30px beyond shape bounds.
+    # Seed only from inner-disc holes (r < R_INNER); colored sectors
+    # (blue/teal, R < 230) act as barriers so fill stays within the fills.
     ys_f, xs_f = np.mgrid[0:H, 0:W]
     dist_f = np.sqrt((xs_f - CX_OUT)**2 + (ys_f - CY_OUT)**2)
-    # Seed: only transparent pixels inside the disc (the 6 punched holes)
     expanding = (result[:, :, 3] == 0) & (dist_f < R_INNER)
-    near_white_opaque = (
-        (result[:, :, 0] > WHITE_THRESH) &
-        (result[:, :, 1] > WHITE_THRESH) &
-        (result[:, :, 2] > WHITE_THRESH) &
+    nw_opaque = (
+        (result[:, :, 0] > 230) &
+        (result[:, :, 1] > 230) &
+        (result[:, :, 2] > 230) &
         (result[:, :, 3] > 0)
     )
-    for _ in range(60):  # max 60px expansion
+    for _ in range(60):
         adj = np.zeros_like(expanding, dtype=bool)
-        adj[1:, :]  |= expanding[:-1, :]  # above
-        adj[:-1, :] |= expanding[1:, :]   # below
-        adj[:, 1:]  |= expanding[:, :-1]  # left
-        adj[:, :-1] |= expanding[:, 1:]   # right
-        new_t = near_white_opaque & adj
+        adj[1:, :]  |= expanding[:-1, :]
+        adj[:-1, :] |= expanding[1:, :]
+        adj[:, 1:]  |= expanding[:, :-1]
+        adj[:, :-1] |= expanding[:, 1:]
+        new_t = nw_opaque & adj
         if not new_t.any():
             break
         result[new_t, 3] = 0
-        expanding = new_t  # BFS: only expand from frontier
-        near_white_opaque &= ~new_t
+        expanding = new_t
+        nw_opaque &= ~new_t
+
+    # Pass 2 — radius cleanup for isolated white pixels near each hole centre.
+    # Some white elements (text-box fills, anti-aliased borders) are separated
+    # from the hole by a few teal pixels so flood-fill cannot reach them.
+    RADIUS = 80
+    for (cx, cy, w, h) in HOLES:
+        sx0 = max(0, int(cx) - RADIUS); sx1 = min(W, int(cx) + RADIUS)
+        sy0 = max(0, int(cy) - RADIUS); sy1 = min(H, int(cy) + RADIUS)
+        reg = result[sy0:sy1, sx0:sx1, :]
+        iso = (reg[:, :, 0] > 240) & (reg[:, :, 1] > 240) & \
+              (reg[:, :, 2] > 240) & (reg[:, :, 3] > 0)
+        reg[:, :, 3] = np.where(iso, 0, reg[:, :, 3])
+        result[sy0:sy1, sx0:sx1, :] = reg
 
     return result
 
