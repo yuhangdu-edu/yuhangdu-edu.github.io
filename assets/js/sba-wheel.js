@@ -5,13 +5,13 @@
   if (!ctx) return;
 
   // ── GEOMETRY ──────────────────────────────────────────────────────────
-  var W = 1200, CX = 600, CY = 600, R_OUT = 584;
+  var W = 2400, CX = 1200, CY = 1200, R_OUT = 1168;
   var N = 22, ASTEP = (2 * Math.PI) / N, A0 = -Math.PI / 2;
 
   // Angle of the arrow in the natural (unrotated) Layer 1 PNG.
-  // Derived from PPTX geometry: Triangle centre at dx_norm=-0.392, dy_norm=-0.199
-  // relative to disc centre → atan2(-0.199, -0.392) = -2.673061 rad
-  var DEFAULT_ANGLE = -2.673061;
+  // Empirically measured: centroid of blue arrow pixels in layer1_nuli.png
+  // relative to disc centre = -2.552613 rad (-146.3 deg)
+  var DEFAULT_ANGLE = -2.552613;
 
   // ── STATE ─────────────────────────────────────────────────────────────
   var parity = 'nulliparous', selected = 18, isDragging = false;
@@ -19,6 +19,8 @@
 
   canvas.width = W;
   canvas.height = W;
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
 
   // ── IMAGE LOADER ──────────────────────────────────────────────────────
   function loadImages(par, cb) {
