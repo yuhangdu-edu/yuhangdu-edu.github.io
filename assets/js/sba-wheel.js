@@ -184,65 +184,56 @@
   }
 
   // ─── Layer 1 wedge ────────────────────────────────────────────────────
-  // Drawn DIRECTLY on the main canvas (no offscreen canvas / destination-out).
-  // The wedge is solid; the 6 "windows" are white value boxes drawn on top.
+  // Solid wedge drawn on main canvas. Holes are punched by redrawing the
+  // actual layer-2 cells (light blue + red number) on top of the wedge,
+  // matching the physical cardboard device exactly.
   function drawWedge(theme, data) {
-    var wL = needleAngle - ASTEP / 2;   // left edge of wedge = left of selected sector
-    var wR = wL + WEDGE_SPAN;           // right edge (8 sectors clockwise)
-    var hA = ASTEP * 0.45;              // half-angular width of each window box
+    var wL  = needleAngle - ASTEP / 2;
+    var wR  = wL + WEDGE_SPAN;
+    var gap = 2;          // px gap so wedge material shows around each hole
+    var hA  = ASTEP * 0.44;  // half-angular span of hole (< half-sector)
 
     // 1. Solid wedge fill
     sector(ctx, R_CTR, R_LABEL, wL, wR);
-    ctx.fillStyle = theme.wedge;
-    ctx.fill();
+    ctx.fillStyle = theme.wedge; ctx.fill();
 
     // 2. Wedge border
     sector(ctx, R_CTR, R_LABEL, wL, wR);
     ctx.strokeStyle = theme.wedgeBorder; ctx.lineWidth = 1.5; ctx.stroke();
 
-    // 3. Internal ring dividers within wedge
+    // 3. Internal ring dividers
     for (var k = 1; k < 6; k++) {
       ctx.beginPath();
       ctx.arc(CX, CY, R_LABEL - k*RING_W, wL, wR);
       ctx.strokeStyle = 'rgba(255,255,255,0.45)'; ctx.lineWidth = 0.75; ctx.stroke();
     }
 
-    // 4. White value boxes at needle angle (the "windows") + labels
+    // 4. Punch holes: redraw layer-2 cells at needle angle on top of wedge
     for (var j = 0; j < 6; j++) {
-      var rMid = R_LABEL - j*RING_W - RING_W/2;
+      var ro   = R_LABEL - j * RING_W - gap;
+      var ri   = Math.max(R_LABEL - (j + 1) * RING_W + gap, R_CTR + gap);
+      var rMid = (ro + ri) / 2;
       var pct  = Math.round(data[selected][j] * 100);
-      var bW   = RING_W * 0.70, bH = RING_W * 0.60;
-
-      // White rounded box centred at the needle angle on ring j
+      // Light-blue cell fill (same as layer 2 selected cell)
+      sector(ctx, ri, ro, needleAngle - hA, needleAngle + hA);
+      ctx.fillStyle = theme.cellSel; ctx.fill();
+      // White grid border around hole
+      sector(ctx, ri, ro, needleAngle - hA, needleAngle + hA);
+      ctx.strokeStyle = 'rgba(255,255,255,0.9)'; ctx.lineWidth = 1; ctx.stroke();
+      // Red number
       ctx.save();
-      ctx.translate(CX + rMid*Math.cos(needleAngle),
-                    CY + rMid*Math.sin(needleAngle));
+      ctx.translate(CX + rMid*Math.cos(needleAngle), CY + rMid*Math.sin(needleAngle));
       ctx.rotate(needleAngle + Math.PI/2);
-      ctx.fillStyle = '#ffffff';
-      ctx.strokeStyle = 'rgba(0,0,0,0.18)'; ctx.lineWidth = 0.5;
-      ctx.beginPath();
-      if (ctx.roundRect) { ctx.roundRect(-bW/2, -bH/2, bW, bH, 2); }
-      else                { ctx.rect(-bW/2, -bH/2, bW, bH); }
-      ctx.fill(); ctx.stroke();
-      // Red value
       ctx.fillStyle = CELL_RED;
-      ctx.font = 'bold ' + Math.round(RING_W*0.38) + 'px sans-serif';
+      ctx.font = 'bold ' + (j < 3 ? '12' : '11') + 'px sans-serif';
       ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
       ctx.fillText(pct, 0, 0);
       ctx.restore();
+    }
 
-      // "%" just clockwise of the box
-      var pctA = needleAngle + hA + 0.05;
-      ctx.save();
-      ctx.translate(CX + rMid*Math.cos(pctA), CY + rMid*Math.sin(pctA));
-      ctx.rotate(pctA + Math.PI/2);
-      ctx.fillStyle = CELL_RED;
-      ctx.font = Math.round(RING_W*0.28) + 'px sans-serif';
-      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-      ctx.fillText('%', 0, 0);
-      ctx.restore();
-
-      // Scenario label (diagonal cascade: each label 1 sector further right)
+    // 5. Scenario labels on the wedge (diagonal cascade)
+    for (var j = 0; j < 6; j++) {
+      var rMid = R_LABEL - j*RING_W - RING_W/2;
       var lblA = needleAngle + ASTEP * (1.4 + j*0.85);
       ctx.save();
       ctx.translate(CX + rMid*Math.cos(lblA), CY + rMid*Math.sin(lblA));
