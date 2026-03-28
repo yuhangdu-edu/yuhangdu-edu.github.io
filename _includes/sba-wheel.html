@@ -1,13 +1,15 @@
 <style>
 .sba-wrap{margin:1.5em 0}
-.sba-header{display:flex;align-items:center;justify-content:center;gap:1em;margin-bottom:1em}
+.sba-header{display:flex;align-items:center;justify-content:center;gap:1em;margin-bottom:.6em}
 .sba-parity-name{font-weight:700;font-size:1.05em}
 .sba-switch-btn{padding:.45em 1.1em;border-radius:20px;border:2px solid #888;background:none;cursor:pointer;font-family:inherit;font-size:.88em;transition:background .15s,border-color .15s}
 .sba-switch-btn:hover{background:#eee;border-color:#555}
+.sba-hint{text-align:center;font-size:.83em;color:#555;margin-bottom:.8em}
 #sbaCanvas{display:block;margin:0 auto;width:600px;height:600px;max-width:100%}
 </style>
 <div class="sba-wrap">
 <div class="sba-header"><span class="sba-parity-name" id="sbaParityName">Nulliparous</span><button class="sba-switch-btn" id="sbaSwitchBtn">Switch to Multiparous</button></div>
+<p class="sba-hint">Drag the inner circle to explore probabilities across different travel time scenarios.</p>
 <canvas id="sbaCanvas" width="2400" height="2400"></canvas>
 </div>
 <script src="/assets/js/sba-wheel.js"></script>
