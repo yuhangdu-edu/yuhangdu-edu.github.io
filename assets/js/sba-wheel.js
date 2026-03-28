@@ -12,7 +12,7 @@
     '9\u20139.5h','9.5\u201310h','10\u201310.5h','10.5\u201311h',
     '11\u201311.5h','11.5\u201312h','12+h'
   ];
-  var WIN_LABELS = ['No MWH Stay', '0 Wks', '1 Wk', '2 Wks', '3 Wks', '4 Wks'];
+  var WIN_LABELS = ['No MWH Stay:', '0 WK:', '1 WK:', '2 WKs:', '3 WKs:', '4 WKs:'];
   var N = 22;
 
   var NULI = [
@@ -184,14 +184,13 @@
   }
 
   // ─── Layer 1 wedge ────────────────────────────────────────────────────
-  // Solid wedge drawn on main canvas. Holes are punched by redrawing the
-  // actual layer-2 cells (light blue + red number) on top of the wedge,
-  // matching the physical cardboard device exactly.
+  // Solid wedge. Holes punched by redrawing layer-2 cells on top.
+  // Labels are to the LEFT of each hole (matching physical device).
   function drawWedge(theme, data) {
-    var wL  = needleAngle - ASTEP / 2;
+    var wL  = needleAngle - ASTEP / 2;  // left edge = selected sector left
     var wR  = wL + WEDGE_SPAN;
-    var gap = 2;          // px gap so wedge material shows around each hole
-    var hA  = ASTEP * 0.44;  // half-angular span of hole (< half-sector)
+    var gap = 2;
+    var hA  = ASTEP * 0.44;   // half-angular span of each hole
 
     // 1. Solid wedge fill
     sector(ctx, R_CTR, R_LABEL, wL, wR);
@@ -208,19 +207,31 @@
       ctx.strokeStyle = 'rgba(255,255,255,0.45)'; ctx.lineWidth = 0.75; ctx.stroke();
     }
 
-    // 4. Punch holes: redraw layer-2 cells at needle angle on top of wedge
+    // 4. "Stay at MWH: Move date pre EDD" heading inside wedge
+    var hTxtA = needleAngle + ASTEP * 2.8, hTxtR = R_LABEL - 1.3*RING_W;
+    ctx.save();
+    ctx.translate(CX + hTxtR*Math.cos(hTxtA), CY + hTxtR*Math.sin(hTxtA));
+    ctx.rotate(hTxtA + Math.PI/2);
+    ctx.fillStyle = 'rgba(255,255,255,0.95)';
+    ctx.font = 'bold ' + Math.round(RING_W*0.33) + 'px sans-serif';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
+    ctx.fillText('Stay at MWH:', 0, 0);
+    ctx.textBaseline = 'top';
+    ctx.font = Math.round(RING_W*0.26) + 'px sans-serif';
+    ctx.fillStyle = 'rgba(255,255,255,0.85)';
+    ctx.fillText('Move date pre EDD', 0, 0);
+    ctx.restore();
+
+    // 5. Punch holes: redraw layer-2 cells at needle angle
     for (var j = 0; j < 6; j++) {
-      var ro   = R_LABEL - j * RING_W - gap;
-      var ri   = Math.max(R_LABEL - (j + 1) * RING_W + gap, R_CTR + gap);
+      var ro   = R_LABEL - j*RING_W - gap;
+      var ri   = Math.max(R_LABEL - (j+1)*RING_W + gap, R_CTR + gap);
       var rMid = (ro + ri) / 2;
       var pct  = Math.round(data[selected][j] * 100);
-      // Light-blue cell fill (same as layer 2 selected cell)
       sector(ctx, ri, ro, needleAngle - hA, needleAngle + hA);
       ctx.fillStyle = theme.cellSel; ctx.fill();
-      // White grid border around hole
       sector(ctx, ri, ro, needleAngle - hA, needleAngle + hA);
       ctx.strokeStyle = 'rgba(255,255,255,0.9)'; ctx.lineWidth = 1; ctx.stroke();
-      // Red number
       ctx.save();
       ctx.translate(CX + rMid*Math.cos(needleAngle), CY + rMid*Math.sin(needleAngle));
       ctx.rotate(needleAngle + Math.PI/2);
@@ -231,24 +242,39 @@
       ctx.restore();
     }
 
-    // 5. Scenario labels on the wedge (diagonal cascade)
+    // 6. "%" clockwise of each hole
     for (var j = 0; j < 6; j++) {
       var rMid = R_LABEL - j*RING_W - RING_W/2;
-      var lblA = needleAngle + ASTEP * (1.4 + j*0.85);
+      var pctA = needleAngle + hA + 0.04;
+      ctx.save();
+      ctx.translate(CX + rMid*Math.cos(pctA), CY + rMid*Math.sin(pctA));
+      ctx.rotate(pctA + Math.PI/2);
+      ctx.fillStyle = CELL_RED;
+      ctx.font = Math.round(RING_W*0.27) + 'px sans-serif';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText('%', 0, 0);
+      ctx.restore();
+    }
+
+    // 7. Scenario labels RIGHT-ALIGNED just COUNTERCLOCKWISE of each hole
+    //    (matching physical device: label text to the left, value box to the right)
+    var lblA = needleAngle - hA - 0.02;
+    for (var j = 0; j < 6; j++) {
+      var rMid = R_LABEL - j*RING_W - RING_W/2;
       ctx.save();
       ctx.translate(CX + rMid*Math.cos(lblA), CY + rMid*Math.sin(lblA));
       ctx.rotate(lblA + Math.PI/2);
-      ctx.fillStyle = 'rgba(255,255,255,0.92)';
+      ctx.fillStyle = 'rgba(255,255,255,0.95)';
       ctx.font = 'bold ' + Math.round(RING_W*0.29) + 'px sans-serif';
-      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
       ctx.fillText(WIN_LABELS[j], 0, 0);
       ctx.restore();
     }
   }
 
-  // Arrow in outer label ring pointing at selected sector
+  // Arrow in outer label ring — at LEFT EDGE of selected sector (matches physical device)
   function drawArrow(theme) {
-    var angle = needleAngle;
+    var angle = needleAngle - ASTEP / 2;
     var tipR  = R_OUT - 3, baseR = R_LABEL + 4, hW = ASTEP * 0.38;
     ctx.beginPath();
     ctx.moveTo(CX + tipR *Math.cos(angle),      CY + tipR *Math.sin(angle));
