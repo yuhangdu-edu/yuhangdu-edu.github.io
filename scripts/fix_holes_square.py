@@ -1,13 +1,16 @@
 """
-Fix Layer 1 holes: take the good flood-fill base (c6cb46f) and enlarge
-rectangular holes to squares (max(w, h)), run flood-fill, then apply
-radius cleanup for holes 1-5 only (NOT hole 0).
+Fix Layer 1 holes: take the good base (c7a0e8d) and make the rectangular
+holes square using min(w, h) — the shorter (height) axis — so each hole
+fits within its actual PPTX shape bounds and looks square on screen.
 
-Hole 0 ("No MWH Stay") sits in the white disc sector near the disc edge
-(r≈976). Radius cleanup for hole 0 punches through the white-filled label
-text box adjacent to the hole. Holes 1-5 are in the teal sector where
-colored pixels block flood-fill from reaching glow pixels — they need the
-radius cleanup to clear those white-on-teal artifacts.
+  Hole 0 (No MWH Stay): min(112.7, 76.7) = 77 px square
+  Holes 1-5 (stay rows): min(109.6, 88.9) = 89 px square
+
+Flood-fill cleans white glow adjacent to holes.
+Radius cleanup (80 px, threshold 240) is applied for holes 1-5 only —
+those sit in the teal sector where colored pixels block flood-fill.
+Hole 0 is skipped: it is in the white disc sector so any glow is
+white-on-white (invisible) and radius cleanup would over-punch the label.
 """
 import sys, math
 import numpy as np
@@ -47,11 +50,11 @@ def frac_to_px(cx_frac, cy_frac, w_frac, h_frac):
 HOLES = [frac_to_px(*h) for h in HOLE_SHAPES_FRAC]
 
 for i, (cx, cy, w, h) in enumerate(HOLES):
-    side = max(w, h)
+    side = min(w, h)
     x0 = max(0, int(cx - side/2) - 2);  x1 = min(OUT_W, int(cx + side/2) + 2)
     y0 = max(0, int(cy - side/2) - 2);  y1 = min(OUT_H, int(cy + side/2) + 2)
     print(f"Hole {i}: center=({cx:.1f},{cy:.1f}), w={w:.1f}, h={h:.1f}, "
-          f"side={side:.1f}, punch=[{x0}:{x1}, {y0}:{y1}] = {x1-x0}x{y1-y0}px")
+          f"side=min={side:.1f}, punch=[{x0}:{x1}, {y0}:{y1}] = {x1-x0}x{y1-y0}px")
 
 
 def fix_layer1(in_path, out_path):
@@ -59,9 +62,10 @@ def fix_layer1(in_path, out_path):
     assert img.size == (OUT_W, OUT_H), f"Unexpected size {img.size}"
     arr = np.array(img)
 
-    # Step 1 — punch square holes (overwrite existing rectangular holes)
+    # Step 1 — punch square holes using min(w, h) so each square fits
+    # within the actual PPTX shape bounding box.
     for (cx, cy, w, h) in HOLES:
-        side = max(w, h)
+        side = min(w, h)
         x0 = max(0, int(cx - side/2) - 2);  x1 = min(OUT_W, int(cx + side/2) + 2)
         y0 = max(0, int(cy - side/2) - 2);  y1 = min(OUT_H, int(cy + side/2) + 2)
         arr[y0:y1, x0:x1, 3] = 0
