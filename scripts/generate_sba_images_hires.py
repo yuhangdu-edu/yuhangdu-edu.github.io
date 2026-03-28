@@ -40,16 +40,21 @@ print(f"Crop box: SX={SX}, SY={SY}, SW={SW}, SH={SH}")
 print(f"Output size: {OUT_W}x{OUT_H}")
 
 # ── Hole positions (from PPTX, same for nuli and multi) ──────────────────────
-# (cx_frac, cy_frac, w_frac, h_frac) in PPTX slide fractions (before oval distortion)
-# cx_frac and cy_frac are the CENTER of the shape in fraction of slide dimensions.
-# These were derived from the PPTX XML in the previous session.
+# (cx_frac, cy_frac, w_frac, h_frac) — ALL values are fractions of slide dimensions
+# Derived from python-pptx inspection of tool_design_updated.pptx slide 2:
+#   RR15: cx=0.4560 cy=0.1874 w=0.0181 h=0.0219  ("No MWH Stay" hole)
+#   RR19: cx=0.5300 cy=0.4029 w=0.0176 h=0.0254  (innermost stay row)
+#   RR29: cx=0.5470 cy=0.3843 w=0.0176 h=0.0254
+#   RR30: cx=0.5644 cy=0.3663 w=0.0176 h=0.0254
+#   RR31: cx=0.5809 cy=0.3487 w=0.0176 h=0.0254
+#   RR32: cx=0.5976 cy=0.3317 w=0.0176 h=0.0254  (outermost stay row)
 HOLE_SHAPES_FRAC = [
-    (0.456, 0.187, 0.242, 0.164),
-    (0.530, 0.403, 0.234, 0.191),
-    (0.547, 0.384, 0.234, 0.191),
-    (0.564, 0.366, 0.234, 0.191),
-    (0.581, 0.349, 0.234, 0.191),
-    (0.598, 0.332, 0.234, 0.191),
+    (0.4560, 0.1874, 0.0181, 0.0219),
+    (0.5300, 0.4029, 0.0176, 0.0254),
+    (0.5470, 0.3843, 0.0176, 0.0254),
+    (0.5644, 0.3663, 0.0176, 0.0254),
+    (0.5809, 0.3487, 0.0176, 0.0254),
+    (0.5976, 0.3317, 0.0176, 0.0254),
 ]
 
 def frac_to_px(cx_frac, cy_frac, w_frac, h_frac):
