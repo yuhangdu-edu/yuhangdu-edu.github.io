@@ -14,7 +14,7 @@
   var DEFAULT_ANGLE = -2.878;
 
   // ── STATE ─────────────────────────────────────────────────────────────
-  var parity = 'nulliparous', selected = 19, isDragging = false;
+  var parity = 'nulliparous', selected = 17, isDragging = false;
   var cache = {};
 
   canvas.width = W;
@@ -111,8 +111,8 @@
     switchBtn.addEventListener('click', function () {
       parity = parity === 'nulliparous' ? 'multiparous' : 'nulliparous';
       var nameEl = document.getElementById('sbaParityName');
-      if (nameEl) nameEl.textContent = parity === 'nulliparous' ? 'Nulliparous' : 'Multiparous';
-      this.textContent = parity === 'nulliparous' ? 'Switch to Multiparous' : 'Switch to Nulliparous';
+      if (nameEl) nameEl.textContent = parity === 'nulliparous' ? 'Nulliparas' : 'Multiparas';
+      this.textContent = parity === 'nulliparous' ? 'Switch to Multiparas' : 'Switch to Nulliparas';
       render();
     });
   }
