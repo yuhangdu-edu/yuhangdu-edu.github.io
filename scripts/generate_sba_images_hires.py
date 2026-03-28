@@ -149,13 +149,42 @@ def apply_disc_mask(img_arr):
 
     result[:, :, 3] = alpha
 
-    # Punch 6 transparent holes
+    # Punch 6 transparent holes (core area)
     for (cx, cy, w, h) in HOLES:
         x0 = max(0, int(cx - w / 2) - 2)
         y0 = max(0, int(cy - h / 2) - 2)
         x1 = min(W, int(cx + w / 2) + 2)
         y1 = min(H, int(cy + h / 2) + 2)
         result[y0:y1, x0:x1, 3] = 0
+
+    # Flood-fill outward from each transparent hole through connected near-white pixels.
+    # PowerPoint renders shadow/glow effects that extend ~30px beyond shape bounds,
+    # leaving visible white borders around holes. Seed only from inner-disc holes
+    # (r < R_INNER), not from the outer transparent ring. The colored sectors
+    # (blue/teal, R < 230) act as natural barriers so fill stays within the fills.
+    WHITE_THRESH = 230  # pixels with all channels > this are "near-white fills"
+    ys_f, xs_f = np.mgrid[0:H, 0:W]
+    dist_f = np.sqrt((xs_f - CX_OUT)**2 + (ys_f - CY_OUT)**2)
+    # Seed: only transparent pixels inside the disc (the 6 punched holes)
+    expanding = (result[:, :, 3] == 0) & (dist_f < R_INNER)
+    near_white_opaque = (
+        (result[:, :, 0] > WHITE_THRESH) &
+        (result[:, :, 1] > WHITE_THRESH) &
+        (result[:, :, 2] > WHITE_THRESH) &
+        (result[:, :, 3] > 0)
+    )
+    for _ in range(60):  # max 60px expansion
+        adj = np.zeros_like(expanding, dtype=bool)
+        adj[1:, :]  |= expanding[:-1, :]  # above
+        adj[:-1, :] |= expanding[1:, :]   # below
+        adj[:, 1:]  |= expanding[:, :-1]  # left
+        adj[:, :-1] |= expanding[:, 1:]   # right
+        new_t = near_white_opaque & adj
+        if not new_t.any():
+            break
+        result[new_t, 3] = 0
+        expanding = new_t  # BFS: only expand from frontier
+        near_white_opaque &= ~new_t
 
     return result
 
