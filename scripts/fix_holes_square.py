@@ -1,7 +1,13 @@
 """
 Fix Layer 1 holes: take the good flood-fill base (c6cb46f) and enlarge
-rectangular holes to squares (max(w, h)), then re-run flood-fill.
-No radius cleanup — that step over-punched hole 0.
+rectangular holes to squares (max(w, h)), run flood-fill, then apply
+radius cleanup for holes 1-5 only (NOT hole 0).
+
+Hole 0 ("No MWH Stay") sits in the white disc sector near the disc edge
+(r≈976). Radius cleanup for hole 0 punches through the white-filled label
+text box adjacent to the hole. Holes 1-5 are in the teal sector where
+colored pixels block flood-fill from reaching glow pixels — they need the
+radius cleanup to clear those white-on-teal artifacts.
 """
 import sys, math
 import numpy as np
@@ -88,6 +94,30 @@ def fix_layer1(in_path, out_path):
         nw_opaque &= ~new_t
         iters += 1
     print(f"  Flood-fill: {iters} iterations")
+
+    # Step 3 — radius cleanup for holes 1-5 ONLY (skip hole 0).
+    # Flood-fill can't reach glow pixels separated by teal borders; radius
+    # cleanup bypasses that barrier. Hole 0 is skipped because it sits in
+    # the white disc sector — radius cleanup there would punch the "No MWH
+    # Stay:" label background (white-on-white, so no visible artifact anyway).
+    RADIUS = 80
+    for i, (cx, cy, w, h) in enumerate(HOLES):
+        if i == 0:
+            continue  # skip hole 0
+        sx0 = max(0, int(cx) - RADIUS);  sx1 = min(W, int(cx) + RADIUS)
+        sy0 = max(0, int(cy) - RADIUS);  sy1 = min(H, int(cy) + RADIUS)
+        reg = arr[sy0:sy1, sx0:sx1, :]
+        iso = (
+            (reg[:, :, 0] > 240) &
+            (reg[:, :, 1] > 240) &
+            (reg[:, :, 2] > 240) &
+            (reg[:, :, 3] > 0)
+        )
+        reg[:, :, 3] = np.where(iso, 0, reg[:, :, 3])
+        arr[sy0:sy1, sx0:sx1, :] = reg
+        cleared = int(iso.sum())
+        if cleared:
+            print(f"  Hole {i} radius cleanup: cleared {cleared} pixels")
 
     out_img = Image.fromarray(arr, 'RGBA')
     out_img.save(out_path, 'PNG', optimize=False)
