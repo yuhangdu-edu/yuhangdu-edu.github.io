@@ -4,18 +4,10 @@
 .sba-parity-name{font-weight:700;font-size:1.05em}
 .sba-switch-btn{padding:.45em 1.1em;border-radius:20px;border:2px solid #888;background:none;cursor:pointer;font-family:inherit;font-size:.88em;transition:background .15s,border-color .15s}
 .sba-switch-btn:hover{background:#eee;border-color:#555}
-.sba-body{display:flex;gap:1.5em;align-items:flex-start;flex-wrap:wrap;justify-content:center}
-#sbaCanvas{display:block;width:600px;height:600px;max-width:100%;flex-shrink:0}
-.sba-ring-guide{flex:1;min-width:180px;max-width:260px;border:1px solid #ddd;border-radius:8px;padding:.9em 1em;background:#fafafa;font-size:.85em}
-.sba-rg-title{font-weight:700;margin:0 0 .45em;padding-bottom:.35em;border-bottom:2px solid #ddd;font-size:.88em}
-.sba-rg-row{display:flex;align-items:center;gap:.45em;padding:.2em 0;color:#444;font-size:.82em}
-.sba-rg-num{font-weight:700;color:#777;flex-shrink:0;min-width:1.1em;text-align:right}
-.sba-rg-sep{border-top:1px solid #eee;margin:.5em 0}
-.sba-dot{width:11px;height:11px;border-radius:2px;display:inline-block;flex-shrink:0}
-.sba-rg-hint{color:#888;font-style:italic;font-size:.8em;margin-top:.5em;line-height:1.4}
+#sbaCanvas{display:block;margin:0 auto;width:600px;height:600px;max-width:100%}
 </style>
 <div class="sba-wrap">
 <div class="sba-header"><span class="sba-parity-name" id="sbaParityName">Nulliparous</span><button class="sba-switch-btn" id="sbaSwitchBtn">Switch to Multiparous</button></div>
-<div class="sba-body"><canvas id="sbaCanvas" width="600" height="600"></canvas><div class="sba-ring-guide"><div class="sba-rg-title">Windows (outer &#8594; inner)</div><div class="sba-rg-row"><span class="sba-rg-num">&#9312;</span><span>No MWH stay</span></div><div class="sba-rg-row"><span class="sba-rg-num">&#9313;</span><span>Move to MWH on EDD</span></div><div class="sba-rg-row"><span class="sba-rg-num">&#9314;</span><span>Move 1&#8239;wk before EDD</span></div><div class="sba-rg-row"><span class="sba-rg-num">&#9315;</span><span>Move 2&#8239;wks before EDD</span></div><div class="sba-rg-row"><span class="sba-rg-num">&#9316;</span><span>Move 3&#8239;wks before EDD</span></div><div class="sba-rg-row"><span class="sba-rg-num">&#9317;</span><span>Move 4&#8239;wks before EDD</span></div><div class="sba-rg-sep"></div><p class="sba-rg-hint">Drag the wheel or click the outer ring to select a travel time. The 6 windows on the blue overlay show P(SBA) for each scenario at that travel time.</p></div></div>
+<canvas id="sbaCanvas" width="600" height="600"></canvas>
 </div>
 <script src="/assets/js/sba-wheel.js"></script>
