@@ -14,7 +14,7 @@
   var DEFAULT_ANGLE = -2.878;
 
   // ── STATE ─────────────────────────────────────────────────────────────
-  var parity = 'nulliparous', selected = 18, isDragging = false;
+  var parity = 'nulliparous', selected = 19, isDragging = false;
   var cache = {};
 
   canvas.width = W;
