@@ -5,7 +5,7 @@
   if (!ctx) return;
 
   // ── GEOMETRY ──────────────────────────────────────────────────────────
-  var W = 600, CX = 300, CY = 300, R_OUT = 292;
+  var W = 1200, CX = 600, CY = 600, R_OUT = 584;
   var N = 22, ASTEP = (2 * Math.PI) / N, A0 = -Math.PI / 2;
 
   // Angle of the arrow in the natural (unrotated) Layer 1 PNG.
@@ -45,7 +45,7 @@
     // Layer 1: rotating wedge overlay
     // Rotate so the arrow (at DEFAULT_ANGLE in image space) aligns with
     // the left edge of the selected sector.
-    var rotation = (A0 + selected * ASTEP) - DEFAULT_ANGLE;
+    var rotation = (A0 + selected * ASTEP + ASTEP / 2) - DEFAULT_ANGLE;
     ctx.save();
     ctx.translate(CX, CY);
     ctx.rotate(rotation);
