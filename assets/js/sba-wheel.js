@@ -9,9 +9,9 @@
   var N = 22, ASTEP = (2 * Math.PI) / N, A0 = -Math.PI / 2;
 
   // Angle of the arrow in the natural (unrotated) Layer 1 PNG.
-  // Empirically measured: centroid of blue arrow pixels in layer1_nuli.png
-  // relative to disc centre = -2.552613 rad (-146.3 deg)
-  var DEFAULT_ANGLE = -2.552613;
+  // Empirically measured: centroid of arrowhead pixels (outermost blue, r>900)
+  // relative to disc centre = -2.878 rad (-164.8 deg)
+  var DEFAULT_ANGLE = -2.878;
 
   // ── STATE ─────────────────────────────────────────────────────────────
   var parity = 'nulliparous', selected = 18, isDragging = false;
