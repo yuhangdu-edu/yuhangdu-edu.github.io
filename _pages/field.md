@@ -65,12 +65,12 @@ author_profile: true
           <p>For the national or regional (population) health administration level, we have coordinated the development of an open-access, web-based software to map and analyze birth rate, HF network and BBA risk in order to (i) identify communities facing the highest risks of BBAs and prioritize related health interventions accordingly; (ii) evaluate, generate and disseminate data-driven MWH assignment policies; and (iii) inform capacity management and facility location decisions in MWH facility networks.</p>
           <div style="display:flex;flex-direction:column;gap:1.5em;margin-top:1em;">
             <figure style="margin:0;text-align:center;">
-              <img src="/images/Artemis/output_map.png" alt="Selected Artemis Output Map" style="width:100%;border:1px solid #ddd;" />
-              <figcaption style="font-size:.88em;color:#444;margin-top:.4em;">Figure: Selected Artemis Output Map.</figcaption>
+              <figcaption style="font-size:.88em;color:#444;margin-bottom:.4em;">Figure: Selected Artemis Output Map.</figcaption>
+              <img src="/images/Artemis/output_map.png" alt="Selected Artemis Output Map" style="width:80%;border:1px solid #ddd;" />
             </figure>
             <figure style="margin:0;text-align:center;">
-              <img src="/images/Artemis/output_table.png" alt="Selected Artemis Output Table" style="width:100%;border:1px solid #ddd;" />
-              <figcaption style="font-size:.88em;color:#444;margin-top:.4em;">Figure: Selected Artemis Output Table.</figcaption>
+              <figcaption style="font-size:.88em;color:#444;margin-bottom:.4em;">Figure: Selected Artemis Output Table.</figcaption>
+              <img src="/images/Artemis/output_table.png" alt="Selected Artemis Output Table" style="width:80%;border:1px solid #ddd;" />
             </figure>
           </div>
         </div>
