@@ -58,6 +58,11 @@
   gap: 1.25em;
   margin: 1.5em 0 2em;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  padding: 0.75em 0;
 }
 
 .field-tabs__btn {
