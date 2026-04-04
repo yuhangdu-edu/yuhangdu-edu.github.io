@@ -9,7 +9,7 @@ author_profile: true
 
 [**A Simple Statistical Model and Physical Device to Estimate a Woman-Specific Probability of Skilled Birth Assistance and Associated Benefit of Maternity Waiting Home Stay**](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0302245)<br>
 With Jérémie Gallien, Qi (George) Chen, Yi Zhang, Jody Lori, Joseph Sieka, and Bentoe Tehoungue.<br>
-**PLoS One** 20(5): e0302245.
+*Published at **PLoS One*** 20(5): e0302245.
 - Project website: [birth-analytics.org](http://www.birth-analytics.org/)
 
 ---
