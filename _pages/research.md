@@ -16,7 +16,7 @@ With Jérémie Gallien, Qi (George) Chen, Yi Zhang, Jody Lori, Joseph Sieka, and
 
 [**Optimal Assignment Guidelines for Maternity Waiting Homes in Resource-Constrained Environments**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5432095)<br>
 With Qi (George) Chen, Jérémie Gallien, Jody Lori, Dimitris Panayiotou, and Joseph Sieka.<br>
-*Under Review at **Operations Research***.
+*Major Revision at **Operations Research***.
 - Project website: [birth-analytics.org](http://www.birth-analytics.org/)
 - Accepted for presentation at MSOM Healthcare SIG (2025)
 
