@@ -5,16 +5,11 @@ permalink: /field/
 author_profile: true
 ---
 
-<style>.page__title { display: none; }</style>
-
 <div class="field-tabs">
-  <div class="field-tabs__sticky">
-    <h1 class="field-tabs__title">In the Field</h1>
-    <nav class="field-tabs__nav">
-      <button class="field-tabs__btn active" data-tab="liberia">Field Research in Liberia</button>
-      <button class="field-tabs__btn" data-tab="cambridge">Field Research in Cambridge University Hospitals</button>
-    </nav>
-  </div>
+  <nav class="field-tabs__nav">
+    <button class="field-tabs__btn active" data-tab="liberia">Field Research in Liberia</button>
+    <button class="field-tabs__btn" data-tab="cambridge">Field Research in Cambridge University Hospitals</button>
+  </nav>
 
   <div class="field-tabs__panel active" id="tab-liberia">
     <p>The goal is to develop evidence-based knowledge and tools leveraging modern analytical methods for improving the effectiveness of perinatal health delivery systems.</p>
