@@ -12,9 +12,9 @@ author_profile: true
   </nav>
 
   <div class="field-tabs__panel active" id="tab-liberia">
-    <p>The goal is to develop evidence-based knowledge and tools leveraging modern analytical methods for improving the effectiveness of perinatal health delivery systems.</p>
-    <p>I visited Liberia in July, 2025.</p>
-    <p>Implementation Tools: I and our team have developed two related tools to facilitate the implementation of this research by practitioners at both individual and population health levels. During the fieldwork, our team led a two-day workshop.</p>
+    <p>I visited Liberia in July 2025. This trip built on three years of collaboration between the Family Health Division of Liberia's Ministry of Health, the University of Liberia's College of Health Sciences, London Business School, and the University of Michigan's School of Nursing.</p>
+
+    <p>We visited health facilities and maternity waiting homes (MWHs) in Bong, Nimba, and Grand Cape Mount counties. We met with County Health Team officers, midwives, nurses, and patients to understand firsthand the challenges of delivering perinatal care in these settings.</p>
 
     <div class="field-gallery-wrap">
       <div class="field-gallery" id="liberia-gallery">
@@ -40,6 +40,8 @@ author_profile: true
         </div>
       </div>
     </div>
+
+    <p>Our team also led a two-day technical training workshop in Monrovia. The workshop brought together maternal health leaders from across Liberia, including representatives from the Ministry of Health, County Health Teams, the University of Liberia, and the Clinton Health Access Initiative (CHAI). Participants received hands-on training on two analytical tools we developed for individual and population level unassisted birth risk assessment. The sessions also opened rich discussions. Participants shared accounts of limited MWH capacity, difficulties in communicating risk to patients and families, and the need for better training for midwives. These conversations reinforced how much lies beyond the reach of models and data alone, and confirmed the importance of designing tools that practitioners can trust and use.</p>
 
     <h2>Two Implementation Tools</h2>
 
