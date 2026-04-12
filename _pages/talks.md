@@ -17,7 +17,7 @@ author_profile: true
 
 ---
 
-**Balancing Fairness and Efficiency in Scheduling for Maternity Care**
+**Reserving Capacity, Restoring Fairness: Scheduling Elective Caesarean Sections in the NHS**
 
 - *(Scheduled)* INFORMS Healthcare Conference \| Raleigh, NC \| July 2026
 - *(Scheduled)* POMS Annual Meeting \| Reno, NV \| May 2026
