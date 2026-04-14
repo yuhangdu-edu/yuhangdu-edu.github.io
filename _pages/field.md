@@ -33,7 +33,7 @@ author_profile: true
         </div>
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/MWH_1.png')">
           <img src="/images/Liberia/MWH_1.png" alt="Maternity waiting home" />
-          <div class="field-gallery__caption">A maternity waiting home (MWH) where expectant mothers stay near a clinic ahead of delivery.</div>
+          <div class="field-gallery__caption">MWH: a residential facility where expectant mothers stay near a clinic ahead of delivery.</div>
         </div>
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/room.png')">
           <img src="/images/Liberia/room.png" alt="Inside an MWH" />
