@@ -21,6 +21,6 @@ With Qi (George) Chen, Jérémie Gallien, Jody Lori, Dimitris Panayiotou, and Jo
 
 
 3. **Reserving Capacity, Restoring Fairness: Scheduling Elective Caesarean Sections in the NHS**<br>
-With Yueyang Zhong and Catherine Aiken.<br>
+With Yueyang Zhong and Catherine Aiken;<br>
 Previously circulated as "Balancing Fairness and Efficiency in Scheduling for Maternity Care".<br>
 *Manuscript in Preparation.*
