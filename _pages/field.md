@@ -17,6 +17,7 @@ author_profile: true
     <p>We visited health facilities and maternity waiting homes (MWHs) in Bong, Nimba, and Grand Cape Mount counties. We met with County Health Team officers, midwives, nurses, and patients to understand firsthand the challenges of delivering perinatal care in these settings.</p>
 
     <div class="field-gallery-wrap">
+      <div class="field-gallery-wrap__label">Field Photo Gallery &mdash; Liberia, July 2025</div>
       <div class="field-gallery" id="liberia-gallery">
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/workshop.JPG')">
           <img src="/images/Liberia/workshop.JPG" alt="Workshop in Liberia" />
