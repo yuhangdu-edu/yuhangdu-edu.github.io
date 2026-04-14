@@ -20,15 +20,15 @@ author_profile: true
       <div class="field-gallery" id="liberia-gallery">
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/workshop.JPG')">
           <img src="/images/Liberia/workshop.JPG" alt="Workshop in Liberia" />
-          <div class="field-gallery__caption">Two-day technical training workshop in Monrovia with the Ministry of Health, County Health Teams, the University of Liberia, and CHAI.</div>
+          <div class="field-gallery__caption"><strong>Photo 1.</strong> Two-day technical training workshop in Monrovia with the Ministry of Health, County Health Teams, the University of Liberia, and CHAI.</div>
         </div>
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/CHT.JPG')">
           <img src="/images/Liberia/CHT.JPG" alt="Meeting with County Health Team" />
-          <div class="field-gallery__caption">Meeting with County Health Team officers during facility visits in Bong, Nimba, and Grand Cape Mount counties.</div>
+          <div class="field-gallery__caption"><strong>Photo 2.</strong> Meeting with County Health Team officers during facility visits in Bong, Nimba, and Grand Cape Mount counties.</div>
         </div>
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/CA_map.png')">
           <img src="/images/Liberia/CA_map.png" alt="Catchment area map" />
-          <div class="field-gallery__caption">Catchment-area map used to analyze birth rates, health-facility networks, and unassisted-birth risk across communities.</div>
+          <div class="field-gallery__caption"><strong>Photo 3.</strong> Catchment-area map used to analyze birth rates, health-facility networks, and unassisted-birth risk across communities.</div>
         </div>
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/MWH_1.png')">
           <img src="/images/Liberia/MWH_1.png" alt="Maternity waiting home" />
