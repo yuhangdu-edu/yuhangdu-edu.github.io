@@ -92,9 +92,20 @@ author_profile: true
   </div>
 </div>
 
-<div class="field-lightbox" id="field-lightbox" onclick="closeLightbox()">
-  <button class="field-lightbox__close" onclick="closeLightbox()">&times;</button>
-  <img id="field-lightbox-img" src="" alt="" onclick="event.stopPropagation()" />
+<div class="field-lightbox" id="field-lightbox" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="field-lightbox__close" onclick="event.stopPropagation(); closeLightbox();" aria-label="Close (Esc)">
+    <span class="field-lightbox__close-x" aria-hidden="true">&times;</span>
+    <span>Close</span>
+  </button>
+  <button class="field-lightbox__nav field-lightbox__nav--prev" onclick="event.stopPropagation(); lightboxPrev();" aria-label="Previous photo">&#10094;</button>
+  <button class="field-lightbox__nav field-lightbox__nav--next" onclick="event.stopPropagation(); lightboxNext();" aria-label="Next photo">&#10095;</button>
+  <div class="field-lightbox__stage" onclick="event.stopPropagation()">
+    <img id="field-lightbox-img" class="field-lightbox__img" src="" alt="" />
+    <div class="field-lightbox__meta">
+      <div class="field-lightbox__counter" id="field-lightbox-counter"></div>
+      <div id="field-lightbox-caption"></div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -122,16 +133,81 @@ function galleryScroll(id, dir) {
 }
 
 
+var lightboxPhotos = [];
+var lightboxIndex = 0;
+
+function buildLightboxPhotos() {
+  lightboxPhotos = Array.prototype.map.call(
+    document.querySelectorAll('#liberia-gallery .field-gallery__item'),
+    function(item) {
+      var img = item.querySelector('img');
+      var cap = item.querySelector('.field-gallery__caption');
+      return {
+        src: img ? img.getAttribute('src') : '',
+        alt: img ? img.getAttribute('alt') : '',
+        caption: cap ? cap.innerHTML : ''
+      };
+    }
+  );
+}
+
+function renderLightbox() {
+  if (!lightboxPhotos.length) return;
+  var photo = lightboxPhotos[lightboxIndex];
+  var imgEl = document.getElementById('field-lightbox-img');
+  imgEl.src = photo.src;
+  imgEl.alt = photo.alt;
+  document.getElementById('field-lightbox-caption').innerHTML = photo.caption;
+  document.getElementById('field-lightbox-counter').textContent =
+    'Photo ' + (lightboxIndex + 1) + ' of ' + lightboxPhotos.length;
+}
+
 function openLightbox(src) {
-  document.getElementById('field-lightbox-img').src = src;
+  if (!lightboxPhotos.length) buildLightboxPhotos();
+  var found = lightboxPhotos.findIndex(function(p) { return p.src === src; });
+  lightboxIndex = found >= 0 ? found : 0;
+  renderLightbox();
   document.getElementById('field-lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeLightbox() {
   document.getElementById('field-lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function lightboxPrev() {
+  if (!lightboxPhotos.length) return;
+  lightboxIndex = (lightboxIndex - 1 + lightboxPhotos.length) % lightboxPhotos.length;
+  renderLightbox();
+}
+
+function lightboxNext() {
+  if (!lightboxPhotos.length) return;
+  lightboxIndex = (lightboxIndex + 1) % lightboxPhotos.length;
+  renderLightbox();
 }
 
 document.addEventListener('keydown', function(e) {
+  var open = document.getElementById('field-lightbox').classList.contains('open');
+  if (!open) return;
   if (e.key === 'Escape') closeLightbox();
+  else if (e.key === 'ArrowLeft') lightboxPrev();
+  else if (e.key === 'ArrowRight') lightboxNext();
 });
+
+(function() {
+  var lb = document.getElementById('field-lightbox');
+  if (!lb) return;
+  var touchStartX = null;
+  lb.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 1) touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+  lb.addEventListener('touchend', function(e) {
+    if (touchStartX === null) return;
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) { dx < 0 ? lightboxNext() : lightboxPrev(); }
+    touchStartX = null;
+  });
+})();
 </script>
