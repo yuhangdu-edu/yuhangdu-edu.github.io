@@ -23,6 +23,10 @@ author_profile: true
           <img src="/images/Liberia/workshop.JPG" alt="Workshop in Liberia" />
           <div class="field-gallery__caption">Technical training workshop in Monrovia with the Ministry of Health, County Health Teams, the University of Liberia, and CHAI.</div>
         </div>
+        <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/workshop_me.png')">
+          <img src="/images/Liberia/workshop_me.png" alt="Leading a session on the SBA Wheel" />
+          <div class="field-gallery__caption">Leading a session on the SBA Wheel at the Monrovia workshop.</div>
+        </div>
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/CHT.JPG')">
           <img src="/images/Liberia/CHT.JPG" alt="Meeting with County Health Team" />
           <div class="field-gallery__caption">Meeting with County Health Team officers during facility visits.</div>
