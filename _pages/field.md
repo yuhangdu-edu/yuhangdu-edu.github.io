@@ -37,11 +37,11 @@ author_profile: true
         </div>
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/Fenutoli_MWH.png')">
           <img src="/images/Liberia/Fenutoli_MWH.png" alt="Expectant mother heading to Fenutoli MWH" />
-          <div class="field-gallery__caption">An expectant mother on her way to Fenutoli MWH ahead of delivery.</div>
+          <div class="field-gallery__caption">An expectant mother on her way to Fenutoli MWH (Bong County) ahead of delivery.</div>
         </div>
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/room.png')">
           <img src="/images/Liberia/room.png" alt="Inside an MWH" />
-          <div class="field-gallery__caption">Inside an MWH: sleeping quarters for mothers awaiting delivery.</div>
+          <div class="field-gallery__caption">Inside Lofa Bridge MWH (Grand Cape Mount County): sleeping quarters for expectant mothers.</div>
         </div>
       </div>
     </div>
