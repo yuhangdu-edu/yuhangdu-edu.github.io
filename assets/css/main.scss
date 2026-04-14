@@ -357,3 +357,8 @@ summary.field-accordion__header {
 .page__content ul ul {
   list-style-type: disc;
 }
+
+/* Bold the numeric marker on ordered lists in page content (research list) */
+.page__content ol > li::marker {
+  font-weight: 700;
+}
