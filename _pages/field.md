@@ -20,23 +20,23 @@ author_profile: true
       <div class="field-gallery" id="liberia-gallery">
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/workshop.JPG')">
           <img src="/images/Liberia/workshop.JPG" alt="Workshop in Liberia" />
-          <div class="field-gallery__caption"></div>
+          <div class="field-gallery__caption">Two-day technical training workshop in Monrovia with the Ministry of Health, County Health Teams, the University of Liberia, and CHAI.</div>
         </div>
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/CHT.JPG')">
-          <img src="/images/Liberia/CHT.JPG" alt="CHT Liberia" />
-          <div class="field-gallery__caption"></div>
+          <img src="/images/Liberia/CHT.JPG" alt="Meeting with County Health Team" />
+          <div class="field-gallery__caption">Meeting with County Health Team officers during facility visits in Bong, Nimba, and Grand Cape Mount counties.</div>
         </div>
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/CA_map.png')">
-          <img src="/images/Liberia/CA_map.png" alt="CA Map" />
-          <div class="field-gallery__caption"></div>
+          <img src="/images/Liberia/CA_map.png" alt="Catchment area map" />
+          <div class="field-gallery__caption">Catchment-area map used to analyze birth rates, health-facility networks, and unassisted-birth risk across communities.</div>
         </div>
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/MWH_1.png')">
-          <img src="/images/Liberia/MWH_1.png" alt="MWH" />
-          <div class="field-gallery__caption"></div>
+          <img src="/images/Liberia/MWH_1.png" alt="Maternity waiting home" />
+          <div class="field-gallery__caption">A maternity waiting home (MWH) visited during the trip, where expectant mothers stay near a health facility ahead of delivery.</div>
         </div>
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/room.png')">
-          <img src="/images/Liberia/room.png" alt="Room" />
-          <div class="field-gallery__caption"></div>
+          <img src="/images/Liberia/room.png" alt="Inside an MWH" />
+          <div class="field-gallery__caption">Inside an MWH: sleeping quarters for mothers awaiting delivery, illustrating the limited capacity discussed with midwives and nurses.</div>
         </div>
       </div>
     </div>
@@ -85,8 +85,9 @@ author_profile: true
   </div>
 
   <div class="field-tabs__panel" id="tab-cambridge">
-    <h2>Scheduling Elective Caesarean Sections in the NHS</h2>
-    <p>In collaboration with Cambridge University Hospitals and the University of Cambridge (Department of Obstetrics &amp; Gynaecology), we are working with NHS maternity teams to rethink how scarce operating-theatre capacity is allocated between early- and late-booking patients. Building on this partnership, we have developed an interactive planning tool that lets any maternity unit calibrate a fair and efficient scheduling policy to its own data. Tool link coming soon.</p>
+    <h2>Scheduling Elective Caesarean Sections in the NHS (2026)</h2>
+    <p>In collaboration with Cambridge University Hospitals and the University of Cambridge (Department of Obstetrics &amp; Gynaecology), we are working with NHS maternity teams to rethink how scarce operating-theatre capacity is allocated between early- and late-booking patients. Building on this partnership, we have developed an <strong>interactive planning tool</strong> that lets any maternity unit calibrate a fair and efficient scheduling policy to its own data.</p>
+    <p><em style="color: var(--global-link-color);">Tool link coming soon.</em></p>
   </div>
 </div>
 

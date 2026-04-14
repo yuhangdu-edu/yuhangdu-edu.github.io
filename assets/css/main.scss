@@ -119,14 +119,14 @@
 }
 
 .field-gallery__item {
-  flex: 0 0 380px;
+  flex: 0 0 520px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
 
   img {
     width: 100%;
-    height: 280px;
+    height: 380px;
     object-fit: cover;
     display: block;
     border-radius: 8px;
