@@ -84,7 +84,10 @@ author_profile: true
     <p>For more information, please visit our project website: <a href="https://birth-analytics.org" target="_blank" rel="noopener">birth-analytics.org</a></p>
   </div>
 
-  <div class="field-tabs__panel" id="tab-cambridge"><p>Coming soon.</p></div>
+  <div class="field-tabs__panel" id="tab-cambridge">
+    <h2>Scheduling Elective Caesarean Sections in the NHS</h2>
+    <p>In collaboration with Cambridge University Hospitals and the University of Cambridge (Department of Obstetrics &amp; Gynaecology), we are working with NHS maternity teams to rethink how scarce operating-theatre capacity is allocated between early- and late-booking patients. Building on this partnership, we have developed an interactive planning tool that lets any maternity unit calibrate a fair and efficient scheduling policy to its own data. Tool link coming soon.</p>
+  </div>
 </div>
 
 <div class="field-lightbox" id="field-lightbox" onclick="closeLightbox()">
