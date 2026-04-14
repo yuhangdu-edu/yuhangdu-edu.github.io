@@ -31,13 +31,13 @@ author_profile: true
           <img src="/images/Liberia/CHT.JPG" alt="Meeting with County Health Team" />
           <div class="field-gallery__caption">Meeting with County Health Team officers during facility visits.</div>
         </div>
-        <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/CA_map.png')">
-          <img src="/images/Liberia/CA_map.png" alt="Catchment area map" />
-          <div class="field-gallery__caption">Catchment area of Fenutoli Clinic.</div>
-        </div>
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/Fenutoli_MWH.png')">
           <img src="/images/Liberia/Fenutoli_MWH.png" alt="Expectant mother heading to Fenutoli MWH" />
           <div class="field-gallery__caption">An expectant mother on her way to Fenutoli MWH (Bong County) ahead of delivery.</div>
+        </div>
+        <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/CA_map.png')">
+          <img src="/images/Liberia/CA_map.png" alt="Catchment area map" />
+          <div class="field-gallery__caption">Catchment area of Fenutoli Clinic.</div>
         </div>
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/room.png')">
           <img src="/images/Liberia/room.png" alt="Inside an MWH" />
