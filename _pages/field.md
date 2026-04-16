@@ -86,7 +86,7 @@ author_profile: true
 
     </div>
 
-    <p>For more information, please visit our project website: <a href="https://birth-analytics.org" target="_blank" rel="noopener">birth-analytics.org</a></p>
+    <p>For more information, please visit our project website: <a href="http://birth-analytics.org" target="_blank" rel="noopener">birth-analytics.org</a></p>
   </div>
 
   <div class="field-tabs__panel" id="tab-cambridge">
