@@ -95,14 +95,11 @@ author_profile: true
     <p><em style="color: var(--global-link-color);">Tool link coming soon.</em></p>
 
     <div style="margin-top:2.5em;padding-top:1.5em;border-top:1px solid #e5e5e5;">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:2em 3.5em;justify-content:flex-start;">
-        <img src="/images/LBS_logo.jpg" alt="London Business School" style="height:95px;width:auto;display:block;" />
-        <img src="/images/cambridge.png" alt="University of Cambridge, Department of Obstetrics and Gynaecology" style="height:115px;width:auto;display:block;" />
-        <img src="/images/CUH_logo.png" alt="Cambridge University Hospitals NHS Foundation Trust" style="height:95px;width:auto;display:block;padding:0 6px;" />
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:2em 4em;justify-content:center;">
+        <img src="/images/LBS_logo.jpg" alt="London Business School" style="height:120px;width:auto;display:block;" />
+        <img src="/images/cambridge.png" alt="University of Cambridge, Department of Obstetrics and Gynaecology" style="height:145px;width:auto;display:block;" />
+        <img src="/images/CUH_logo.png" alt="Cambridge University Hospitals NHS Foundation Trust" style="height:115px;width:auto;display:block;" />
       </div>
-      <p style="font-size:.78em;color:#888;margin-top:1.5em;font-style:italic;line-height:1.5;">
-        Logos identify the research collaborators on this project; reproduced with permission and unaltered.
-      </p>
     </div>
   </div>
 </div>
