@@ -7,6 +7,7 @@ author_profile: true
 
 ## Teaching Assistant, London Business School
 
+- CL03 Managerial Statistics ([EMBA-Global core](https://www.emba-global.com/programme-details/core-courses)): Summer 2026.
 - C170 Data Analytics for Managers ([MBA core](https://www.london.edu/masters-degrees/mba/programme-content/core-courses)): Fall 2025.
 - CM16 Business Analytics ([MiM core](https://www.london.edu/masters-degrees/masters-in-management/programme-content/core-courses)): Fall 2025.
 - AM13 Decision Analytics & Modelling ([MAM core](https://www.london.edu/masters-degrees/masters-in-analytics-and-management/programme-content/core-courses)): Spring 2023, 2024, 2025.
