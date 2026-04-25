@@ -91,8 +91,29 @@ author_profile: true
 
   <div class="field-tabs__panel" id="tab-cambridge">
     <h2>Scheduling Elective Caesarean Sections in the NHS (2026)</h2>
-    <p>In collaboration with Cambridge University Hospitals and the University of Cambridge (Department of Obstetrics &amp; Gynaecology), we are working with NHS maternity teams to rethink how scarce operating-theatre capacity is allocated between early- and late-booking patients. Building on this partnership, we have developed an <strong>interactive planning tool</strong> that allows any maternity unit to calibrate a fair and efficient scheduling policy to its own data.</p>
+    <p>In collaboration with Cambridge University Hospitals NHS Foundation Trust and the University of Cambridge (Department of Obstetrics &amp; Gynaecology), we are working with NHS maternity teams to rethink how scarce operating-theatre capacity is allocated between early- and late-booking patients. Building on this partnership, we have developed an <strong>interactive planning tool</strong> that allows any maternity unit to calibrate a fair and efficient scheduling policy to its own data.</p>
     <p><em style="color: var(--global-link-color);">Tool link coming soon.</em></p>
+
+    <div style="margin-top:2.5em;padding-top:1.5em;border-top:1px solid #e5e5e5;">
+      <div style="font-size:.9em;color:#444;margin-bottom:1em;">In collaboration with:</div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:2.5em 3em;justify-content:flex-start;">
+        <figure style="margin:0;text-align:center;display:flex;flex-direction:column;align-items:center;">
+          <img src="/images/LBS_logo.jpg" alt="London Business School" style="height:70px;width:auto;display:block;" />
+          <figcaption style="font-size:.8em;color:#666;margin-top:.6em;line-height:1.3;">London Business School</figcaption>
+        </figure>
+        <figure style="margin:0;text-align:center;display:flex;flex-direction:column;align-items:center;">
+          <img src="/images/cambridge.png" alt="University of Cambridge" style="height:70px;width:auto;display:block;" />
+          <figcaption style="font-size:.8em;color:#666;margin-top:.6em;line-height:1.3;">University of Cambridge<br/>Department of Obstetrics &amp; Gynaecology</figcaption>
+        </figure>
+        <figure style="margin:0;text-align:center;display:flex;flex-direction:column;align-items:center;padding:0 12px;">
+          <img src="/images/CUH_logo.png" alt="Cambridge University Hospitals NHS Foundation Trust" style="height:70px;width:auto;display:block;" />
+          <figcaption style="font-size:.8em;color:#666;margin-top:.6em;line-height:1.3;">Cambridge University Hospitals<br/>NHS Foundation Trust</figcaption>
+        </figure>
+      </div>
+      <p style="font-size:.78em;color:#777;margin-top:1.5em;font-style:italic;line-height:1.5;">
+        The logos above identify the academic and clinical collaborators for this non-commercial research project. Their use does not imply endorsement, sponsorship, or formal affiliation beyond the stated research collaboration. The Cambridge University Hospitals NHS Foundation Trust logo is reproduced unaltered, in accordance with the Trust's corporate identity guidelines.
+      </p>
+    </div>
   </div>
 </div>
 
