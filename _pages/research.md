@@ -5,7 +5,10 @@ permalink: /research/
 author_profile: true
 ---
 
-## Publications and Working Papers
+<style>
+.page__content ol > li { margin-bottom: 2.2em; }
+.page__content ol > li > ul { margin-top: .5em; }
+</style>
 
 1. [**A Simple Statistical Model and Physical Device to Estimate a Woman-Specific Probability of Skilled Birth Assistance and Associated Benefit of Maternity Waiting Home Stay**](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0302245)<br>
 With Jérémie Gallien, Qi (George) Chen, Yi Zhang, Jody Lori, Joseph Sieka, and Bentoe Tehoungue.<br>

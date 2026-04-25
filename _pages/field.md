@@ -1,14 +1,14 @@
 ---
 layout: single
-title: "In the Field"
+title: "Field & Practice"
 permalink: /field/
 author_profile: true
 ---
 
 <div class="field-tabs">
   <nav class="field-tabs__nav">
-    <button class="field-tabs__btn active" data-tab="liberia">1. Field Research in Liberia</button>
-    <button class="field-tabs__btn" data-tab="cambridge">2. Field Research in Cambridge University Hospitals</button>
+    <button class="field-tabs__btn active" data-tab="liberia">1. Liberia: Maternity Waiting Homes</button>
+    <button class="field-tabs__btn" data-tab="cambridge">2. United Kingdom: Elective Caesarean Scheduling</button>
   </nav>
 
   <div class="field-tabs__panel active" id="tab-liberia">
