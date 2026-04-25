@@ -20,27 +20,27 @@ author_profile: true
       <div class="field-gallery-wrap__label">Field Photo Gallery &mdash; Liberia, July 2025</div>
       <div class="field-gallery" id="liberia-gallery">
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/workshop.JPG')">
-          <img src="/images/Liberia/workshop.JPG" alt="Workshop in Liberia" />
+          <img src="/images/Liberia/workshop.JPG" alt="Workshop in Liberia" loading="lazy" decoding="async" />
           <div class="field-gallery__caption">Technical training workshop in Monrovia with the Ministry of Health, County Health Teams, the University of Liberia, and CHAI.</div>
         </div>
-        <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/workshop_me.png')">
-          <img src="/images/Liberia/workshop_me.png" alt="Leading a session on the SBA Wheel" />
+        <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/workshop_me-web.jpg')">
+          <img src="/images/Liberia/workshop_me-web.jpg" alt="Leading a session on the SBA Wheel" loading="lazy" decoding="async" />
           <div class="field-gallery__caption">Leading a session on the SBA Wheel at the Monrovia workshop.</div>
         </div>
         <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/CHT.JPG')">
-          <img src="/images/Liberia/CHT.JPG" alt="Meeting with County Health Team" />
+          <img src="/images/Liberia/CHT.JPG" alt="Meeting with County Health Team" loading="lazy" decoding="async" />
           <div class="field-gallery__caption">Meeting with County Health Team officers during facility visits.</div>
         </div>
-        <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/Fenutoli_MWH.png')">
-          <img src="/images/Liberia/Fenutoli_MWH.png" alt="Expectant mother heading to Fenutoli MWH" />
+        <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/Fenutoli_MWH-web.jpg')">
+          <img src="/images/Liberia/Fenutoli_MWH-web.jpg" alt="Expectant mother heading to Fenutoli MWH" loading="lazy" decoding="async" />
           <div class="field-gallery__caption">An expectant mother on her way to Fenutoli MWH (Bong County) ahead of delivery.</div>
         </div>
-        <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/CA_map.png')">
-          <img src="/images/Liberia/CA_map.png" alt="Catchment area map" />
+        <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/CA_map-web.jpg')">
+          <img src="/images/Liberia/CA_map-web.jpg" alt="Catchment area map" loading="lazy" decoding="async" />
           <div class="field-gallery__caption">Catchment area of Fenutoli Clinic.</div>
         </div>
-        <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/room.png')">
-          <img src="/images/Liberia/room.png" alt="Inside an MWH" />
+        <div class="field-gallery__item" onclick="openLightbox('/images/Liberia/room-web.jpg')">
+          <img src="/images/Liberia/room-web.jpg" alt="Inside an MWH" loading="lazy" decoding="async" />
           <div class="field-gallery__caption">Inside Lofa Bridge MWH (Grand Cape Mount County): sleeping quarters for expectant mothers.</div>
         </div>
       </div>
@@ -74,11 +74,11 @@ author_profile: true
           <div style="display:flex;flex-direction:column;gap:1.5em;margin-top:1em;align-items:center;">
             <figure style="margin:0;width:80%;text-align:left;">
               <figcaption style="font-size:.88em;color:#444;margin-bottom:.4em;">Figure: Selected Artemis Output Map.</figcaption>
-              <img src="/images/Artemis/output_map.png" alt="Selected Artemis Output Map" style="width:100%;border:1px solid #ddd;" />
+              <img src="/images/Artemis/output_map-web.jpg" alt="Selected Artemis Output Map" loading="lazy" decoding="async" style="width:100%;border:1px solid #ddd;" />
             </figure>
             <figure style="margin:0;width:80%;text-align:left;">
               <figcaption style="font-size:.88em;color:#444;margin-bottom:.4em;">Figure: Selected Artemis Output Table.</figcaption>
-              <img src="/images/Artemis/output_table.png" alt="Selected Artemis Output Table" style="width:100%;border:1px solid #ddd;" />
+              <img src="/images/Artemis/output_table.png" alt="Selected Artemis Output Table" loading="lazy" decoding="async" style="width:100%;border:1px solid #ddd;" />
             </figure>
           </div>
         </div>
