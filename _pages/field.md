@@ -97,7 +97,7 @@ author_profile: true
     <div style="margin-top:2.5em;padding-top:1.5em;border-top:1px solid #e5e5e5;">
       <div style="display:flex;flex-wrap:wrap;align-items:center;gap:2em 4em;justify-content:center;">
         <img src="/images/LBS_logo.jpg" alt="London Business School" style="height:120px;width:auto;display:block;" />
-        <img src="/images/cambridge.png" alt="University of Cambridge, Department of Obstetrics and Gynaecology" style="height:145px;width:auto;display:block;" />
+        <img src="/images/cambridge.png" alt="University of Cambridge, Department of Obstetrics and Gynaecology" style="height:145px;width:auto;display:block;transform:translateX(1.2em);" />
         <img src="/images/CUH_logo.png" alt="Cambridge University Hospitals NHS Foundation Trust" style="height:115px;width:auto;display:block;" />
       </div>
     </div>
