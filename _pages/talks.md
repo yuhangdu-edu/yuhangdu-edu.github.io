@@ -20,5 +20,6 @@ author_profile: true
 **Reserving Capacity, Restoring Fairness: Scheduling Elective Caesarean Sections in the NHS**
 
 - *(Scheduled)* INFORMS Healthcare Conference \| Raleigh, NC \| July 2026
+- *(Scheduled)* Cambridge Judge Business School, PhD Seminar Series \| Cambridge, UK \| June 2026
 - *(Scheduled)* POMS Annual Meeting \| Reno, NV \| May 2026
 - POMS-HK International Conference \| Shenzhen, China \| January 2026

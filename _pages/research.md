@@ -8,6 +8,18 @@ author_profile: true
 <style>
 .page__content ol > li { margin-bottom: 2.2em; }
 .page__content ol > li > ul { margin-top: .5em; }
+.pub-btn {
+  display: inline-block;
+  background-color: #5fb3c4;
+  color: #fff !important;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  text-decoration: none !important;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.pub-btn:hover { background-color: #4a9aab; }
 </style>
 
 1. [**A Simple Statistical Model and Physical Device to Estimate a Woman-Specific Probability of Skilled Birth Assistance and Associated Benefit of Maternity Waiting Home Stay**](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0302245)<br>
@@ -23,7 +35,7 @@ With Qi (George) Chen, Jérémie Gallien, Jody Lori, Dimitris Panayiotou, and Jo
 - Accepted for presentation at MSOM Healthcare SIG (2025)
 
 
-3. **Reserving Capacity, Restoring Fairness: Scheduling Elective Caesarean Sections in the NHS**<br>
+3. **Reserving Capacity, Restoring Fairness: Scheduling Elective Caesarean Sections in the NHS** <a href="{{ site.baseurl }}/files/Poster.pdf" class="pub-btn">Poster</a><br>
 With Yueyang Zhong, Catherine Aiken, and Pedra Rabiee;<br>
 Previously circulated as "Balancing Fairness and Efficiency in Scheduling for Maternity Care".<br>
-*Manuscript in Preparation.*
+*Manuscript available upon request.*
