@@ -91,7 +91,7 @@ author_profile: true
 
   <div class="field-tabs__panel" id="tab-cambridge">
     <h2>Scheduling Elective Caesarean Sections in the NHS (2026)</h2>
-    <p>In collaboration with Cambridge University Hospitals NHS Foundation Trust and the University of Cambridge (Department of Obstetrics &amp; Gynaecology), we are working with NHS maternity teams to rethink how scarce operating-theatre capacity is allocated between early- and late-booking patients. Building on this partnership, we have developed an <strong>interactive planning tool</strong> that allows any maternity unit to calibrate a fair and efficient scheduling policy to its own data. The tool is currently being piloted with our NHS partners.</p>
+    <p>In collaboration with Cambridge University Hospitals NHS Foundation Trust and the University of Cambridge (Department of Obstetrics &amp; Gynaecology), we are working with NHS maternity teams to rethink how scarce elective Caesarean theatre slots are allocated between early- and late-booking patients. Building on this partnership, we have developed an <strong>interactive planning tool</strong> that allows any maternity unit to calibrate a fair and efficient scheduling policy to its own data. The tool is currently being piloted with our NHS partners.</p>
     <p><em style="color: var(--global-link-color);">Tool link coming soon.</em></p>
 
     <div style="margin-top:2.5em;padding-top:1.5em;border-top:1px solid #e5e5e5;">
