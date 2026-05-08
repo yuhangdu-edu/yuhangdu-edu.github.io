@@ -46,7 +46,7 @@ author_profile: true
       </div>
     </div>
 
-    <p>Our team also led a two-day technical training workshop in Monrovia. The workshop brought together maternal health leaders from across Liberia, including representatives from the Ministry of Health, County Health Teams, the University of Liberia, and the Clinton Health Access Initiative (CHAI). Participants received hands-on training on two analytical tools we developed for individual and population level unassisted birth risk assessment. The sessions also opened rich discussions. Participants shared accounts of limited MWH capacity, difficulties in communicating risk to patients and families, and the need for better training for midwives. These conversations reinforced how much lies beyond the reach of models and data alone, and confirmed the importance of designing tools that practitioners can trust and use.</p>
+    <p>Our team also led a two-day technical training workshop in Monrovia. The workshop brought together maternal health leaders from across Liberia, including representatives from the Ministry of Health, County Health Teams, the University of Liberia, and the Clinton Health Access Initiative (CHAI). Participants received hands-on training on two implementation tools we developed for individual and population level unassisted birth risk assessment. The sessions also opened rich discussions. Participants shared accounts of limited MWH capacity, difficulties in communicating risk to patients and families, and the need for better training for midwives. These conversations reinforced how much lies beyond the reach of models and data alone, and confirmed the importance of designing tools that practitioners can trust and use.</p>
 
     <h2>Two Implementation Tools</h2>
 
@@ -91,10 +91,8 @@ author_profile: true
 
   <div class="field-tabs__panel" id="tab-cambridge">
     <h2>Scheduling Elective Caesarean Sections in the NHS (2026)</h2>
-    <p>In collaboration with Cambridge University Hospitals NHS Foundation Trust and the University of Cambridge (Department of Obstetrics &amp; Gynaecology), we are working with NHS maternity teams to rethink how scarce operating-theatre capacity is allocated between early- and late-booking patients. Building on this partnership, we have developed an <strong>interactive planning tool</strong> that allows any maternity unit to calibrate a fair and efficient scheduling policy to its own data.</p>
+    <p>In collaboration with Cambridge University Hospitals NHS Foundation Trust and the University of Cambridge (Department of Obstetrics &amp; Gynaecology), we are working with NHS maternity teams to rethink how scarce operating-theatre capacity is allocated between early- and late-booking patients. Building on this partnership, we have developed an <strong>interactive planning tool</strong> that allows any maternity unit to calibrate a fair and efficient scheduling policy to its own data. The tool is currently being piloted with our NHS partners.</p>
     <p><em style="color: var(--global-link-color);">Tool link coming soon.</em></p>
-
-    <p>The tool is currently being piloted with our NHS partners.</p>
 
     <div style="margin-top:2.5em;padding-top:1.5em;border-top:1px solid #e5e5e5;">
       <div style="display:flex;flex-wrap:wrap;align-items:center;gap:2em 4em;justify-content:center;">
