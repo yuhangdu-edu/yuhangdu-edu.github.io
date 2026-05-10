@@ -6,6 +6,7 @@ author_profile: true
 ---
 
 <style>
+.page__content ol { list-style: none; padding-left: 0; }
 .page__content ol > li { margin-bottom: 2.2em; }
 .page__content ol > li > ul { margin-top: .5em; }
 </style>
