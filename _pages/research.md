@@ -32,7 +32,7 @@ With Jérémie Gallien, Qi (George) Chen, Yi Zhang, Jody Lori, Joseph Sieka, and
 With Qi (George) Chen, Jérémie Gallien, Jody Lori, Dimitris Panayiotou, and Joseph Sieka.<br>
 *Major Revision at **Operations Research***.
 - Project website: [birth-analytics.org](http://birth-analytics.org/)
-- Accepted for presentation at MSOM Healthcare SIG (2025)
+- Accepted for presentation at 2025 MSOM Healthcare SIG
 
 
 3. **Reserving Capacity, Restoring Fairness: Scheduling Elective Caesarean Sections in the NHS** <a href="{{ site.baseurl }}/files/Poster.pdf" class="pub-btn">Poster</a><br>
