@@ -39,3 +39,4 @@ With Qi (George) Chen, Jérémie Gallien, Jody Lori, Dimitris Panayiotou, and Jo
 With Yueyang Zhong, Catherine Aiken, and Pedra Rabiee;<br>
 Previously circulated as "Balancing Fairness and Efficiency in Scheduling for Maternity Care".<br>
 *Manuscript available upon request.*
+- Accepted for presentation at 2026 MSOM Main Conference
