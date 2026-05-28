@@ -35,11 +35,7 @@ With Qi (George) Chen, Jérémie Gallien, Jody Lori, Dimitris Panayiotou, and Jo
 - Accepted for presentation at 2025 MSOM Healthcare SIG
 
 
-<<<<<<< HEAD
 3. [**Reserving Capacity, Restoring Fairness: Scheduling Elective Caesarean Sections in the NHS**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6819560)<br>
-=======
-3. **Reserving Capacity, Restoring Fairness: Scheduling Elective Caesarean Sections in the NHS** <a href="{{ site.baseurl }}/files/Poster.pdf" class="pub-btn">Poster</a><br>
->>>>>>> b7fdb21b60e5e91db578788b72fb027cc9754e15
 With Yueyang Zhong, Catherine Aiken, and Pedra Rabiee;<br>
 Previously circulated as "Balancing Fairness and Efficiency in Scheduling for Maternity Care".<br>
 *Manuscript available upon request.*
