@@ -12,9 +12,9 @@ author_profile: true
   </nav>
 
   <div class="field-tabs__panel active" id="tab-liberia">
-    <p>I visited Liberia in July 2025. This trip built on three years of collaboration between the Family Health Division of Liberia's Ministry of Health, the University of Liberia's College of Health Sciences, London Business School, and the University of Michigan's School of Nursing.</p>
+    <p>In July 2025, I traveled to Liberia for a field visit that built on three years of collaboration between the Family Health Division of Liberia's Ministry of Health, the University of Liberia's College of Health Sciences, London Business School, and the University of Michigan's School of Nursing.</p>
 
-    <p>We visited health facilities and maternity waiting homes (MWHs) in Bong, Nimba, and Grand Cape Mount counties. We met with County Health Team officers, midwives, nurses, and patients to understand firsthand the challenges of delivering perinatal care in these settings.</p>
+    <p>Together with the team, I visited health facilities and maternity waiting homes (MWHs) across four counties — Bong, Grand Bassa, Grand Cape Mount, and Nimba — where we met with County Health Team officers and midwives to understand firsthand the realities of delivering perinatal care in these settings.</p>
 
     <div class="field-gallery-wrap">
       <div class="field-gallery-wrap__label">Field Photo Gallery &mdash; Liberia, July 2025</div>
@@ -46,7 +46,7 @@ author_profile: true
       </div>
     </div>
 
-    <p>Our team also led a two-day technical training workshop in Monrovia. The workshop brought together maternal health leaders from across Liberia, including representatives from the Ministry of Health, County Health Teams, the University of Liberia, and the Clinton Health Access Initiative (CHAI). Participants received hands-on training on two analytical tools we developed for individual and population level unassisted birth risk assessment. The sessions also opened rich discussions. Participants shared accounts of limited MWH capacity, difficulties in communicating risk to patients and families, and the need for better training for midwives. These conversations reinforced how much lies beyond the reach of models and data alone, and confirmed the importance of designing tools that practitioners can trust and use.</p>
+    <p>Our team also led a two-day technical training workshop in Monrovia. The workshop brought together maternal health leaders from across Liberia, including representatives from the Ministry of Health, County Health Teams, the University of Liberia, and the Clinton Health Access Initiative (CHAI). Participants received hands-on training on two implementation tools we developed for individual and population level unassisted birth risk assessment. The sessions also opened rich discussions. Participants shared accounts of limited MWH capacity, difficulties in communicating risk to patients and families, and the need for better training for midwives. These conversations reinforced how much lies beyond the reach of models and data alone, and confirmed the importance of designing tools that practitioners can trust and use.</p>
 
     <h2>Two Implementation Tools</h2>
 
@@ -91,7 +91,7 @@ author_profile: true
 
   <div class="field-tabs__panel" id="tab-cambridge">
     <h2>Scheduling Elective Caesarean Sections in the NHS (2026)</h2>
-    <p>In collaboration with Cambridge University Hospitals NHS Foundation Trust and the University of Cambridge (Department of Obstetrics &amp; Gynaecology), we are working with NHS maternity teams to rethink how scarce operating-theatre capacity is allocated between early- and late-booking patients. Building on this partnership, we have developed an <strong>interactive planning tool</strong> that allows any maternity unit to calibrate a fair and efficient scheduling policy to its own data.</p>
+    <p>In collaboration with Cambridge University Hospitals NHS Foundation Trust and the University of Cambridge (Department of Obstetrics &amp; Gynaecology), we are working with NHS maternity teams to rethink how scarce elective Caesarean theatre slots are allocated between early- and late-booking patients. Building on this partnership, we have developed an <strong>interactive planning tool</strong> that allows any maternity unit to calibrate a fair and efficient scheduling policy to its own data. The tool is currently being piloted with our NHS partners.</p>
     <p><em style="color: var(--global-link-color);">Tool link coming soon.</em></p>
 
     <div style="margin-top:2.5em;padding-top:1.5em;border-top:1px solid #e5e5e5;">
