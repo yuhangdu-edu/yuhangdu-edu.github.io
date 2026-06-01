@@ -16,3 +16,7 @@ My research develops operational policies that improve fairness and efficiency i
 Field engagement is central to how I work. I collaborate closely with Liberia's Ministry of Health and clinical partners in the NHS. I bridge rigorous models and field implementation, combining theory and data to develop tools that are used in practice by our field partners.
 
 Prior to joining LBS, I received my B.S. in Information Management and Information Systems from Shanghai University of Finance and Economics in 2021.
+
+# Contact
+
+[ydu@london.edu](mailto:ydu@london.edu)
