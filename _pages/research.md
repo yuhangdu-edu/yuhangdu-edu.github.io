@@ -40,3 +40,8 @@ With Yueyang Zhong, Catherine Aiken, and Pedra Rabiee;<br>
 Previously circulated as "Balancing Fairness and Efficiency in Scheduling for Maternity Care".<br>
 *Under Review.*
 - Accepted for presentation at 2026 MSOM Main Conference
+
+
+4. **Optimal Deployment of AI-Enabled Portable Ultrasound for Antenatal Care in Sub-Saharan Africa**<br>
+With Qi (George) Chen, Harwin De Vries, Jérémie Gallien, and Qingxia (Cynthia) Kong.<br>
+*Work in Progress.*
