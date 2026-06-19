@@ -20,6 +20,7 @@ author_profile: true
   vertical-align: middle;
 }
 .pub-btn:hover { background-color: #4a9aab; }
+.page__content h2.no-rule { border-bottom: none; padding-bottom: 0; }
 </style>
 
 1. [**A Simple Statistical Model and Physical Device to Estimate a Woman-Specific Probability of Skilled Birth Assistance and Associated Benefit of Maternity Waiting Home Stay**](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0302245)<br>
@@ -47,7 +48,8 @@ With Qi (George) Chen, Harwin De Vries, Jérémie Gallien, and Qingxia (Cynthia)
 *Work in Progress.*
 
 
-## Other Research
+## Other Work
+{: .no-rule }
 
 1. [**Optimization and Operations Research in Mitigation of a Pandemic**](https://link.springer.com/article/10.1007/s40305-022-00391-y)<br>
 With Caihua Chen, Dongdong Ge, Lin Lei, and Yinyu Ye.<br>
@@ -56,4 +58,4 @@ With Caihua Chen, Dongdong Ge, Lin Lei, and Yinyu Ye.<br>
 
 2. **Strategic Switchers: The Unique Feature of Carpooling**<br>
 With Rowan Wang.<br>
-*Working Paper.*
+*Under Review.*
