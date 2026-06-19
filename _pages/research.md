@@ -57,5 +57,4 @@ With Caihua Chen, Dongdong Ge, Lin Lei, and Yinyu Ye.<br>
 
 
 2. **Strategic Switchers: The Unique Feature of Carpooling**<br>
-With Rowan Wang.<br>
-*Under Review.*
+With Rowan Wang.
