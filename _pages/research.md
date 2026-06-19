@@ -48,7 +48,7 @@ With Qi (George) Chen, Harwin De Vries, Jérémie Gallien, and Qingxia (Cynthia)
 *Work in Progress.*
 
 
-## Other Work
+## Pre-PhD Work
 {: .no-rule }
 
 1. [**Optimization and Operations Research in Mitigation of a Pandemic**](https://link.springer.com/article/10.1007/s40305-022-00391-y)<br>
