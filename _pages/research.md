@@ -45,3 +45,15 @@ Previously circulated as "Balancing Fairness and Efficiency in Scheduling for Ma
 4. **Optimal Deployment of AI-Enabled Portable Ultrasound for Antenatal Care in Sub-Saharan Africa**<br>
 With Qi (George) Chen, Harwin De Vries, Jérémie Gallien, and Qingxia (Cynthia) Kong.<br>
 *Work in Progress.*
+
+
+## Other Research
+
+1. [**Optimization and Operations Research in Mitigation of a Pandemic**](https://link.springer.com/article/10.1007/s40305-022-00391-y)<br>
+With Caihua Chen, Dongdong Ge, Lin Lei, and Yinyu Ye.<br>
+*Published at **Journal of the Operations Research Society of China*** 10(2): 289–304.
+
+
+2. **Strategic Switchers: The Unique Feature of Carpooling**<br>
+With Rowan Wang.<br>
+*Working Paper.*
