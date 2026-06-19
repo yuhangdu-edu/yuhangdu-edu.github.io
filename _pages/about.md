@@ -26,15 +26,15 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
   height: 0.72em;
   margin-right: 0.55em;
   border-radius: 50%;
-  background: #2ecc71;
-  box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.55);
+  background: var(--global-base-color);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--global-base-color) 55%, transparent);
   animation: jobmarket-pulse 2s infinite;
   vertical-align: middle;
 }
 @keyframes jobmarket-pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.55); }
-  70%  { box-shadow: 0 0 0 0.6em rgba(46, 204, 113, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--global-base-color) 55%, transparent); }
+  70%  { box-shadow: 0 0 0 0.6em transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
 }
 @media (prefers-reduced-motion: reduce) {
   .jobmarket-dot { animation: none; }
