@@ -20,10 +20,12 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
 <p style="font-weight:700;"><i class="fas fa-briefcase" style="color: var(--global-text-color); margin-right: 0.5em;" aria-hidden="true"></i>I am on the 2026-2027 academic job market!</p>
 
 # Contact
+{: .section-gap }
 
 [ydu@london.edu](mailto:ydu@london.edu)
 
 # Upcoming Talk
+{: .section-gap }
 
 <div class="upcoming-talk" markdown="1">
 
@@ -37,6 +39,9 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
 </div>
 
 <style>
+.page__content h1.section-gap {
+  margin-top: 3em;
+}
 .upcoming-talk > p {
   margin-bottom: 0.4em;
 }
