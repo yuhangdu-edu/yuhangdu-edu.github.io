@@ -40,7 +40,7 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
 
 <style>
 .page__content h1.section-gap {
-  margin-top: 2em;
+  margin-top: 1.6em;
 }
 .upcoming-talk > p {
   margin-bottom: 0.4em;
