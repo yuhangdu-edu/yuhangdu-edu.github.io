@@ -37,14 +37,20 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
 </div>
 
 <style>
+.upcoming-talk > p {
+  margin-bottom: 0.4em;
+}
 .upcoming-talk > ul {
+  margin-top: 0;
   margin-left: 0;
   padding-left: 0;
   list-style-position: inside;
 }
-.upcoming-talk > ul ul {
+.upcoming-talk > ul > li > ul {
+  margin-top: 0.3em;
   margin-left: 0;
   padding-left: 1.5em;
   list-style-position: outside;
+  list-style-type: circle;
 }
 </style>
