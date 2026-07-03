@@ -22,3 +22,12 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
 # Contact
 
 [ydu@london.edu](mailto:ydu@london.edu)
+
+# Upcoming Talk
+
+**2026 MSOM Conference**
+
+- **Reserving Capacity, Restoring Fairness: Scheduling Elective Caesarean Sections in the English NHS**
+    - Session MA11: HCM - Reproductive Health Access and Care Scheduling
+    - Time: Monday July 13, 8:30 AM-10:00 AM
+    - Room: Hawes 203
