@@ -25,9 +25,26 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
 
 # Upcoming Talk
 
+<div class="upcoming-talk" markdown="1">
+
 **2026 MSOM Conference**
 
 - **Reserving Capacity, Restoring Fairness: Scheduling Elective Caesarean Sections in the English NHS**
     - Session MA11: HCM - Reproductive Health Access and Care Scheduling
     - Time: Monday July 13, 8:30 AM-10:00 AM
     - Room: Hawes 203
+
+</div>
+
+<style>
+.upcoming-talk > ul {
+  margin-left: 0;
+  padding-left: 0;
+  list-style-position: inside;
+}
+.upcoming-talk > ul ul {
+  margin-left: 0;
+  padding-left: 1.5em;
+  list-style-position: outside;
+}
+</style>
