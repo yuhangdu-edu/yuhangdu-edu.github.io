@@ -172,7 +172,10 @@
 .field-gallery__caption {
   font-size: 0.78em;
   font-style: italic;
-  color: var(--global-text-color);
+  /* Fixed dark color: the gallery card background stays light in both light and
+     dark themes, so this must not follow --global-text-color (which turns white
+     in night mode and would be unreadable on the light card). */
+  color: #333;
   text-align: left;
   padding: 0.55em 0.2em 0;
   min-height: 2.6em;
