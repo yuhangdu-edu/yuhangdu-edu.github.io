@@ -33,6 +33,7 @@ With Jérémie Gallien, Qi (George) Chen, Yi Zhang, Jody Lori, Joseph Sieka, and
 With Qi (George) Chen, Jérémie Gallien, Jody Lori, Dimitris Panayiotou, and Joseph Sieka.<br>
 *Major Revision at **Operations Research***.
 - Project website: [birth-analytics.org](http://birth-analytics.org/)
+- Finalist, 2026 INFORMS Health Applications Society (HAS) Best Student Paper Competition
 - Accepted for presentation at 2025 MSOM Healthcare SIG
 
 
