@@ -24,17 +24,25 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
 
 [ydu@london.edu](mailto:ydu@london.edu)
 
-# Upcoming Talk
+# Upcoming Talks
 {: .section-gap }
 
 <div class="upcoming-talk" markdown="1">
 
-**2026 MSOM Conference**
+**2026 INFORMS Healthcare Conference**
 
+- **Optimal Assignment Guidelines for Maternity Waiting Homes in Resource-Constrained Environments**
+    - Session Title: AI and Analytics for Decision-Making in Healthcare
+    - Time: Wednesday July 29, 8:00 AM - 9:15 AM
+    - Room: 301B
+- **Optimal Assignment Guidelines for Maternity Waiting Homes in Resource-Constrained Environments**
+    - Session Title: HAS Student Paper Competition (Award Session)
+    - Time: Wednesday July 29, 11:00 AM - 12:15 PM
+    - Room: 304
 - **Reserving Capacity, Restoring Fairness: Scheduling Elective Caesarean Sections in the English NHS**
-    - Session MA11: HCM - Reproductive Health Access and Care Scheduling
-    - Time: Monday July 13, 8:30 AM-10:00 AM
-    - Room: Hawes 203
+    - Session Title: Healthcare Access, Equity, and Operations
+    - Time: Wednesday July 29, 3:15 PM - 4:30 PM
+    - Room: 302A
 
 </div>
 
