@@ -41,7 +41,7 @@ With Qi (George) Chen, Jérémie Gallien, Jody Lori, Dimitris Panayiotou, and Jo
 With Yueyang Zhong, Catherine Aiken, and Pedra Rabiee;<br>
 Previously circulated as "Balancing Fairness and Efficiency in Scheduling for Maternity Care".<br>
 *Under Review.*
-- Pilot study underway at Cambridge University Hospitals.
+- Pilot study underway at Cambridge University Hospitals
 - Accepted for presentation at 2026 MSOM Main Conference
 
 
