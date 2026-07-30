@@ -12,7 +12,7 @@ author_profile: true
 </style>
 
 1. **Optimal Assignment Guidelines for Maternity Waiting Homes in Resource-Constrained Environments**
-    - *(Scheduled)* INFORMS Healthcare Conference \| Raleigh, USA \| July 2026
+    - INFORMS Healthcare Conference \| Raleigh, USA \| July 2026
     - European Technology & Operations Management Day \| Tilburg, Netherlands \| June 2026
     - POMS Annual Meeting \| Reno, USA \| May 2026
     - POMS-HK International Conference \| Shenzhen, China \| January 2026
@@ -22,7 +22,7 @@ author_profile: true
     - INFORMS Annual Meeting \| Phoenix, USA \| October 2023
 
 2. **Reserving Capacity, Restoring Fairness: Scheduling Elective Caesarean Sections in the English NHS**
-    - *(Scheduled)* INFORMS Healthcare Conference \| Raleigh, USA \| July 2026
+    - INFORMS Healthcare Conference \| Raleigh, USA \| July 2026
     - MSOM Conference \| Boston, USA \| July 2026
     - Cambridge Judge Business School, Healthcare Operations Seminar \| Cambridge, UK \| June 2026
     - POMS Annual Meeting \| Reno, USA \| May 2026

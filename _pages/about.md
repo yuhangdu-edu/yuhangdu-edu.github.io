@@ -24,6 +24,7 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
 
 [ydu@london.edu](mailto:ydu@london.edu)
 
+{% comment %} ===== UPCOMING TALKS — hidden for now (talks already given). To bring this section back, delete this opening line and the matching endcomment line at the bottom. =====
 # Upcoming Talks
 {: .section-gap }
 
@@ -45,6 +46,7 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
     - Room: 302A
 
 </div>
+{% endcomment %}
 
 <style>
 .page__content h1.section-gap {
