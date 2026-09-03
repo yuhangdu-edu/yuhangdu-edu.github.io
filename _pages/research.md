@@ -34,7 +34,7 @@ With Qi (George) Chen, Jérémie Gallien, Jody Lori, Dimitris Panayiotou, and Jo
 *Major Revision at **Operations Research***. <span style="color: #A83232; font-weight: 700;">[Job Market Paper]</span>
 - Project website: [birth-analytics.org](http://birth-analytics.org/)
 - Finalist (Winner TBA), 2026 MSOM Student Paper Competition
-- Finalist (Winner TBA), 2026 INFORMS Public Sector Operations Research Best Paper Award
+- Finalist (Winner TBA), 2026 INFORMS Public Sector Operations Research (PSOR) Best Paper Award
 - Finalist (Winner TBA), 2026 INFORMS Doing Good with Good OR Student Paper Competition
 - Winner, 2026 INFORMS Health Applications Society (HAS) Best Student Paper Competition
 - Accepted for presentation at 2025 MSOM Healthcare SIG
