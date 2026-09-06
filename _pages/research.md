@@ -25,7 +25,7 @@ author_profile: true
 
 1. [**A Simple Statistical Model and Physical Device to Estimate a Woman-Specific Probability of Skilled Birth Assistance and Associated Benefit of Maternity Waiting Home Stay**](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0302245)<br>
 With Jérémie Gallien, Qi (George) Chen, Yi Zhang, Jody Lori, Joseph Sieka, and Bentoe Tehoungue.<br>
-*Published at **PLoS One*** 20(5): e0302245.
+*Published in **PLoS One*** 20(5): e0302245.
 - Project website: [birth-analytics.org](http://birth-analytics.org/)
 
 
@@ -58,9 +58,9 @@ With Qi (George) Chen, Harwin De Vries, Jérémie Gallien, and Qingxia (Cynthia)
 
 1. [**Optimization and Operations Research in Mitigation of a Pandemic**](https://link.springer.com/article/10.1007/s40305-022-00391-y)<br>
 With Caihua Chen, Dongdong Ge, Lin Lei, and Yinyu Ye.<br>
-*Published at **Journal of the Operations Research Society of China*** 10(2): 289–304.
+*Published in **Journal of the Operations Research Society of China*** 10(2): 289–304.
 
 
 2. **Strategic Switchers: The Unique Feature of Carpooling**<br>
 With Rowan Wang.<br>
-*Under Review; Draft Available Upon Request.*
+*Working Paper; draft available upon request.*
