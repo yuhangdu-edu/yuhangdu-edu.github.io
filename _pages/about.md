@@ -24,151 +24,164 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
 
 [ydu@london.edu](mailto:ydu@london.edu)
 
-<section class="talk-agenda" aria-labelledby="upcoming-talks">
-  <h1 id="upcoming-talks" class="section-gap">Upcoming Talks</h1>
-  <h2 class="talk-agenda__conf">2026 INFORMS Annual Meeting<span class="talk-agenda__city">, San&nbsp;Francisco</span></h2>
-  <p class="talk-agenda__paper"><cite>Optimal Assignment Guidelines for Maternity Waiting Homes in Resource-Constrained Environments</cite></p>
-  <ol class="talk-agenda__list" role="list">
-    <li class="talk-agenda__item">
-      <h3 class="talk-agenda__session">Responsible Operations, Incentives, and Social Impact <span class="talk-agenda__note">(Job Market Showcase)</span></h3>
-      <p class="talk-agenda__when"><time class="talk-agenda__date" datetime="2026-11-01">Sun, Nov 1</time> <span class="talk-agenda__slot"><time datetime="2026-11-01T11:00-08:00">11:00 AM</time>–<time datetime="2026-11-01T12:15-08:00">12:15 PM</time></span></p>
-      <p class="talk-agenda__room">Moscone South–201 (Level 2)</p>
-      <p class="talk-agenda__mine"><span class="talk-agenda__label">My talk</span> <time datetime="2026-11-01T11:36-08:00">11:36</time>–<time datetime="2026-11-01T11:54-08:00">11:54 AM</time></p>
+# Upcoming Talks
+{: .section-gap }
+
+<!-- To hide this section after the conference, wrap everything from the heading above through the closing </div> below in a Liquid comment block (comment ... endcomment), as was done for the Healthcare Conference talks. -->
+
+<div class="talks">
+  <div class="talks__header">
+    <div class="talks__conf">2026 INFORMS Annual Meeting</div>
+    <p class="talks__intro">I will be presenting my job market paper, <em>Optimal Assignment Guidelines for Maternity Waiting Homes in Resource-Constrained Environments</em>, in the sessions below.</p>
+  </div>
+  <ul class="talks__list">
+    <li class="talk">
+      <div class="talk__date" aria-label="Sunday, November 1"><span class="talk__dow">Sun</span><span class="talk__day">1</span><span class="talk__mon">Nov</span></div>
+      <div class="talk__body">
+        <div class="talk__title">Responsible Operations, Incentives, and Social Impact <span class="talk__tag talk__tag--showcase">Job Market Showcase</span></div>
+        <div class="talk__details">
+          <span><i class="fas fa-clock" aria-hidden="true"></i>11:00 AM – 12:15 PM <span class="talk__slot">(my talk: 11:36 AM)</span></span>
+          <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Moscone South-201 (Level 2)</span>
+        </div>
+      </div>
     </li>
-    <li class="talk-agenda__item">
-      <h3 class="talk-agenda__session">MSOM Student Paper Competition I</h3>
-      <p class="talk-agenda__when"><time class="talk-agenda__date" datetime="2026-11-01">Sun, Nov 1</time> <span class="talk-agenda__slot"><time datetime="2026-11-01T13:15-08:00">1:15</time>–<time datetime="2026-11-01T14:30-08:00">2:30 PM</time></span></p>
-      <p class="talk-agenda__room">Moscone South–151 (Upper Mezz)</p>
-      <p class="talk-agenda__mine"><span class="talk-agenda__label">My talk</span> <time datetime="2026-11-01T14:00-08:00">2:00</time>–<time datetime="2026-11-01T14:15-08:00">2:15 PM</time></p>
+    <li class="talk">
+      <div class="talk__date" aria-label="Sunday, November 1"><span class="talk__dow">Sun</span><span class="talk__day">1</span><span class="talk__mon">Nov</span></div>
+      <div class="talk__body">
+        <div class="talk__title">MSOM Student Paper Competition I <span class="talk__tag talk__tag--award">Award Finalist</span></div>
+        <div class="talk__details">
+          <span><i class="fas fa-clock" aria-hidden="true"></i>1:15 – 2:30 PM <span class="talk__slot">(my talk: 2:00 PM)</span></span>
+          <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Moscone South-151 (Upper Mezz)</span>
+        </div>
+      </div>
     </li>
-    <li class="talk-agenda__item">
-      <h3 class="talk-agenda__session">Doing Good with Good OR <span class="talk-agenda__note">(Award Session)</span></h3>
-      <p class="talk-agenda__when"><time class="talk-agenda__date" datetime="2026-11-01">Sun, Nov 1</time> <span class="talk-agenda__slot"><time datetime="2026-11-01T14:45-08:00">2:45</time>–<time datetime="2026-11-01T16:00-08:00">4:00 PM</time></span></p>
-      <p class="talk-agenda__room">Moscone South–22 (Exhibit Level)</p>
-      <p class="talk-agenda__mine"><span class="talk-agenda__label">My talk</span> <time datetime="2026-11-01T15:39-08:00">3:39</time>–<time datetime="2026-11-01T15:57-08:00">3:57 PM</time></p>
+    <li class="talk">
+      <div class="talk__date" aria-label="Sunday, November 1"><span class="talk__dow">Sun</span><span class="talk__day">1</span><span class="talk__mon">Nov</span></div>
+      <div class="talk__body">
+        <div class="talk__title">Doing Good with Good OR <span class="talk__tag talk__tag--award">Award Finalist</span></div>
+        <div class="talk__details">
+          <span><i class="fas fa-clock" aria-hidden="true"></i>2:45 – 4:00 PM <span class="talk__slot">(my talk: 3:39 PM)</span></span>
+          <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Moscone South-22 (Exhibit Level)</span>
+        </div>
+      </div>
     </li>
-    <li class="talk-agenda__item">
-      <h3 class="talk-agenda__session">PSOR Award Session</h3>
-      <p class="talk-agenda__when"><time class="talk-agenda__date" datetime="2026-11-02">Mon, Nov 2</time> <span class="talk-agenda__slot"><time datetime="2026-11-02T14:45-08:00">2:45</time>–<time datetime="2026-11-02T16:00-08:00">4:00 PM</time></span></p>
-      <p class="talk-agenda__room">Moscone South–21 (Exhibit Level)</p>
+    <li class="talk">
+      <div class="talk__date" aria-label="Monday, November 2"><span class="talk__dow">Mon</span><span class="talk__day">2</span><span class="talk__mon">Nov</span></div>
+      <div class="talk__body">
+        <div class="talk__title">PSOR Award Session <span class="talk__tag talk__tag--award">Award Finalist</span></div>
+        <div class="talk__details">
+          <span><i class="fas fa-clock" aria-hidden="true"></i>2:45 – 4:00 PM</span>
+          <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Moscone South-21 (Exhibit Level)</span>
+        </div>
+      </div>
     </li>
-  </ol>
-</section>
+  </ul>
+</div>
 
 <style>
 .page__content h1.section-gap {
   margin-top: 1.6em;
 }
-
-/* Upcoming Talks agenda: everything below is scoped to .talk-agenda */
-.talk-agenda {
-  --talk-accent: var(--global-base-color);
-  --talk-muted: color-mix(in srgb, var(--global-text-color) 80%, transparent);
-  --talk-rule: var(--global-border-color);
+/* ---- Upcoming talks ---- */
+.talks {
+  margin: 0.25em 0 2em;
+  border: 1px solid var(--global-border-color, #e3e6e8);
+  border-radius: 10px;
+  overflow: hidden;
 }
-/* Lighten the teal a little on the dark background so small text stays readable */
-html[data-theme="dark"] .talk-agenda {
-  --talk-accent: color-mix(in srgb, var(--global-base-color) 60%, var(--global-text-color));
+.talks__header {
+  padding: 1em 1.25em 1em;
+  border-bottom: 1px solid var(--global-border-color, #e3e6e8);
+  background: rgba(82, 173, 200, 0.07);
+  background: color-mix(in srgb, var(--global-link-color, #52adc8) 8%, transparent);
 }
-.talk-agenda .talk-agenda__conf {
-  margin: 0.9em 0 0.15em;
-  padding: 0;
-  border: 0;
-  font-size: 1.05em;
-  line-height: 1.35;
-}
-.talk-agenda .talk-agenda__city,
-.talk-agenda .talk-agenda__note {
-  font-weight: 400;
-  color: var(--talk-muted);
-}
-.talk-agenda .talk-agenda__paper {
-  margin: 0 0 0.9em;
-  font-size: 0.95em;
-  line-height: 1.45;
-}
-.talk-agenda .talk-agenda__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border-top: 1px solid var(--talk-rule);
-}
-.talk-agenda .talk-agenda__item {
-  display: grid;
-  grid-template-columns: 9em minmax(0, 1fr);
-  column-gap: 1.25em;
-  margin: 0;
-  padding: 0.7em 0;
-}
-.talk-agenda .talk-agenda__item + .talk-agenda__item {
-  border-top: 1px solid var(--talk-rule);
-}
-.talk-agenda .talk-agenda__item > * {
-  grid-column: 2;
-  margin: 0;
-}
-.talk-agenda .talk-agenda__when {
-  grid-column: 1;
-  grid-row: 1 / span 3;
-  padding-top: 0.15em;
-  font-size: 0.85em;
-  line-height: 1.5;
-  color: var(--talk-muted);
-}
-.talk-agenda .talk-agenda__date {
-  display: block;
-  color: var(--talk-accent);
+.talks__conf {
   font-weight: 700;
-  letter-spacing: 0.06em;
+  font-size: 1.1em;
+  line-height: 1.3;
+}
+.talk__details i {
+  width: 1.2em;
+  margin-right: 0.25em;
+  text-align: center;
+  opacity: 0.85;
+}
+.talks .talks__intro {
+  margin: 0.45em 0 0;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+.talks .talks__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.talks .talk {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1em;
+  margin: 0;
+  padding: 0.9em 1.25em;
+  border-top: 1px solid var(--global-border-color, #e3e6e8);
+}
+.talks .talk:first-child { border-top: 0; }
+.talk__date {
+  flex: 0 0 3.6em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.4em 0.2em;
+  border-radius: 8px;
+  line-height: 1.15;
+  background: rgba(82, 173, 200, 0.14);
+  background: color-mix(in srgb, var(--global-link-color, #52adc8) 14%, transparent);
+}
+.talk__dow,
+.talk__mon {
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.talk-agenda .talk-agenda__slot {
-  display: block;
+.talk__dow { color: var(--global-link-color, #52adc8); }
+.talk__mon { color: var(--global-text-color-light, #646769); font-weight: 600; }
+.talk__day { font-size: 1.45em; font-weight: 700; }
+.talk__body { flex: 1 1 auto; min-width: 0; }
+.talk__title { font-weight: 700; line-height: 1.45; }
+.talk__tag {
+  display: inline-block;
+  vertical-align: 0.1em;
+  margin-left: 0.35em;
+  padding: 0 0.6em;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.7em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.7;
   white-space: nowrap;
 }
-.talk-agenda .talk-agenda__session {
-  font-size: 1em;
-  font-weight: 600;
-  line-height: 1.4;
+.talk__tag--showcase {
+  background: rgba(82, 173, 200, 0.16);
+  border-color: rgba(82, 173, 200, 0.5);
+  background: color-mix(in srgb, var(--global-link-color, #52adc8) 16%, transparent);
+  border-color: color-mix(in srgb, var(--global-link-color, #52adc8) 50%, transparent);
 }
-.talk-agenda .talk-agenda__room {
-  font-size: 0.9em;
-  line-height: 1.45;
-  color: var(--talk-muted);
+.talk__tag--award {
+  background: rgba(232, 168, 32, 0.16);
+  border-color: rgba(232, 168, 32, 0.55);
 }
-.talk-agenda .talk-agenda__mine {
+.talk__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15em 1.4em;
   margin-top: 0.3em;
-  font-size: 0.9em;
-  font-weight: 600;
-  line-height: 1.45;
+  font-size: 0.88em;
+  color: var(--global-text-color-light, #646769);
 }
-.talk-agenda .talk-agenda__label {
-  margin-right: 0.4em;
-  color: var(--talk-accent);
-  font-size: 0.85em;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-/* Phones: stack the date/time above each session */
-@media (max-width: 599px) {
-  .talk-agenda .talk-agenda__item {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .talk-agenda .talk-agenda__item > * {
-    grid-column: 1;
-  }
-  .talk-agenda .talk-agenda__when {
-    grid-row: 1;
-    padding-top: 0;
-    margin-bottom: 0.2em;
-  }
-  .talk-agenda .talk-agenda__date,
-  .talk-agenda .talk-agenda__slot {
-    display: inline;
-  }
-  .talk-agenda .talk-agenda__date {
-    margin-right: 0.5em;
-  }
+.talk__slot { opacity: 0.8; }
+@media (max-width: 520px) {
+  .talks__header, .talks .talk { padding-left: 0.9em; padding-right: 0.9em; }
+  .talk__details { flex-direction: column; gap: 0.1em; }
 }
 </style>
