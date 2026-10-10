@@ -69,8 +69,8 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
           <span class="talk__time">2:45–4:00 PM</span>
         </div>
         <div class="talk__what">
-          <div class="talk__title">Doing Good with Good OR</div>
-          <div class="talk__meta">Award Session · Moscone South-22 (Exhibit Level)</div>
+          <div class="talk__title">Doing Good with Good OR (Award Session)</div>
+          <div class="talk__meta">Moscone South-22 (Exhibit Level)</div>
           <span class="talk__slot"><strong>My talk</strong> · 3:39–3:57 PM</span>
         </div>
       </div>
@@ -110,7 +110,7 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
 .talks__conf-city {
   margin-left: 0.5em;
   font-size: 1.1em;
-  color: var(--global-text-color-light, #646769);
+  color: var(--global-text-color, #494e52);
 }
 .talks .talks__intro {
   margin: 0 0 1.2em;
@@ -147,30 +147,30 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
 }
 .talk__day {
   margin: 0.15em 0 0.2em;
-  font-size: 1.25em;
+  font-size: 1em;
   font-weight: 700;
   line-height: 1.3;
 }
 .talk__time {
-  font-size: 0.95em;
-  color: var(--global-text-color-light, #646769);
+  font-size: 0.9em;
+  color: var(--global-text-color, #494e52);
 }
 .talk__title {
-  font-size: 1.25em;
+  font-size: 1em;
   font-weight: 700;
   line-height: 1.3;
 }
 .talk__meta {
   margin-top: 0.3em;
-  font-size: 0.95em;
-  color: var(--global-text-color-light, #646769);
+  font-size: 0.9em;
+  color: var(--global-text-color, #494e52);
 }
 .talk__slot {
   display: inline-block;
   margin-top: 0.65em;
   padding: 0.25em 0.75em;
   border-radius: 6px;
-  font-size: 0.95em;
+  font-size: 0.9em;
   background: rgba(82, 173, 200, 0.12);
   background: color-mix(in srgb, var(--global-link-color, #52adc8) 12%, transparent);
 }
