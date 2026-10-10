@@ -12,6 +12,7 @@ author_profile: true
   </nav>
 
   <div class="field-tabs__panel active" id="tab-liberia">
+    <h2>Optimal Assignment Guidelines for Maternity Waiting Homes in Liberia (2025&ndash;26)</h2>
     <p>In July 2025, I traveled to Liberia for a field visit that built on three years of collaboration between the Family Health Division of Liberia's Ministry of Health, the University of Liberia's College of Health Sciences, London Business School, and the University of Michigan's School of Nursing.</p>
 
     <p>Together with the team, I visited health facilities and maternity waiting homes (MWHs) across four counties — Bong, Grand Bassa, Grand Cape Mount, and Nimba — where we met with County Health Team officers and midwives to understand firsthand the realities of delivering perinatal care in these settings.</p>
@@ -91,7 +92,13 @@ author_profile: true
 
   <div class="field-tabs__panel" id="tab-cambridge">
     <h2>Scheduling Elective Caesarean Sections in the NHS (2026)</h2>
-    <p>In collaboration with Cambridge University Hospitals NHS Foundation Trust and the University of Cambridge (Department of Obstetrics &amp; Gynaecology), we are working with NHS maternity teams to rethink how scarce elective Caesarean theatre slots are allocated between early- and late-booking patients. Building on this partnership, we have developed an <strong>interactive planning tool</strong> that allows any maternity unit to calibrate a fair and efficient scheduling policy to its own data. The tool is currently being piloted with our NHS partners.</p>
+    <p>In collaboration with Cambridge University Hospitals NHS Foundation Trust (CUH) and the University of Cambridge (Department of Obstetrics &amp; Gynaecology), we are rethinking how scarce elective Caesarean theatre slots are allocated between early- and late-booking patients. We developed an interactive planning interface that translates our capacity-reservation policy into a weekly allocation of theatre slots. The policy has been running in a pilot at CUH since 29 June 2026.</p>
+
+    <figure style="margin:1.5em 0 1em;">
+      <figcaption style="width:100%;font-size:.88em;color:var(--global-text-color);margin-bottom:.4em;">Figure: Elective C-Section Planning Interface.</figcaption>
+      <a href="/images/Cambridge/interface.png" target="_blank" rel="noopener" style="display:block;width:100%;"><img src="/images/Cambridge/interface.png" alt="Screenshot of the Elective C-Section Planning Interface, with inputs for weekly early and late appointment requests and theatre slots per week" loading="lazy" decoding="async" style="width:100%;border:1px solid #ddd;display:block;" /></a>
+    </figure>
+
     <p><em style="color: var(--global-link-color);">Tool link coming soon.</em></p>
 
     <div style="margin-top:2.5em;padding-top:1.5em;border-top:1px solid #e5e5e5;">
