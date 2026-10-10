@@ -55,8 +55,10 @@ var toggleTheme = () => {
 // JSON data to be retrieve when the theme is switched. The listener should only be added if the data is 
 // actually present on the page.
 import { plotlyDarkLayout, plotlyLightLayout } from './theme.js';
+// Plotly is no longer bundled into main.min.js (it added ~4.4 MB to every page and the site has no
+// charts). To use Plotly charts again, add it back to the "uglify" script in package.json.
 let plotlyElements = document.querySelectorAll("pre>code.language-plotly");
-if (plotlyElements.length > 0) {
+if (plotlyElements.length > 0 && typeof Plotly !== "undefined") {
   document.addEventListener("readystatechange", () => {
     if (document.readyState === "complete") {
       plotlyElements.forEach((elem) => {
