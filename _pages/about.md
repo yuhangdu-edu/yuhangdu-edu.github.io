@@ -100,21 +100,21 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
   margin: 0 0 2em;
 }
 .talks .talks__conf {
-  margin: 0 0 0.5em;
+  margin: 0 0 0.25em;
   line-height: 1.4;
 }
 .talks__conf-name {
-  font-size: 1.25em;
+  font-size: 1.1em;
   font-weight: 700;
 }
 .talks__conf-city {
   margin-left: 0.5em;
-  font-size: 1.1em;
+  font-size: 1em;
   color: var(--global-text-color, #494e52);
 }
 .talks .talks__intro {
-  margin: 0 0 1.2em;
-  line-height: 1.6;
+  margin: 0 0 0.8em;
+  line-height: 1.5;
 }
 .talks .talks__list {
   list-style: none;
@@ -124,14 +124,14 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
 }
 .talks .talk {
   margin: 0;
-  padding: 1.1em 0;
+  padding: 0.7em 0;
   border-bottom: 1px solid var(--global-border-color, #e3e6e8);
 }
 .talk__inner {
   display: grid;
-  grid-template-columns: 12em 1fr;
-  gap: 0 1.5em;
-  padding-left: 1.4em;
+  grid-template-columns: 9.5em 1fr;
+  gap: 0 1.25em;
+  padding-left: 1em;
   border-left: 3px solid var(--global-link-color, #52adc8);
 }
 .talk__when {
@@ -146,7 +146,7 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
   color: var(--global-link-color, #52adc8);
 }
 .talk__day {
-  margin: 0.15em 0 0.2em;
+  margin: 0.05em 0;
   font-size: 1em;
   font-weight: 700;
   line-height: 1.3;
@@ -161,14 +161,14 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
   line-height: 1.3;
 }
 .talk__meta {
-  margin-top: 0.3em;
+  margin-top: 0.15em;
   font-size: 0.9em;
   color: var(--global-text-color, #494e52);
 }
 .talk__slot {
   display: inline-block;
-  margin-top: 0.65em;
-  padding: 0.25em 0.75em;
+  margin-top: 0.4em;
+  padding: 0.15em 0.6em;
   border-radius: 6px;
   font-size: 0.9em;
   background: rgba(82, 173, 200, 0.12);
@@ -180,8 +180,8 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
 @media (max-width: 600px) {
   .talk__inner {
     grid-template-columns: 1fr;
-    gap: 0.5em 0;
-    padding-left: 1em;
+    gap: 0.3em 0;
+    padding-left: 0.8em;
   }
   .talk__when {
     flex-direction: row;
