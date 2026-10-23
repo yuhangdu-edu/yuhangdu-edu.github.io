@@ -85,6 +85,7 @@ Prior to joining LBS, I received my B.S. in Information Management and Informati
         <div class="talk__what">
           <div class="talk__title">PSOR Award Session</div>
           <div class="talk__meta">Moscone South-21 (Exhibit Level)</div>
+          <span class="talk__slot"><strong>My talk</strong> · 3:15–3:30 PM</span>
         </div>
       </div>
     </li>
