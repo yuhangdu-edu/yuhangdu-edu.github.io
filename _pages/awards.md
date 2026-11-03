@@ -5,10 +5,10 @@ permalink: /awards/
 author_profile: true
 ---
 
-- Winner, INFORMS Health Applications Society Best Student Paper Competition, 2026
+- Winner, INFORMS Public Sector Operations Research (PSOR) Best Paper Award, 2026
+- Winner, INFORMS Health Applications Society (HAS) Best Student Paper Competition, 2026
+- Honorable Mention, INFORMS Doing Good with Good OR Student Paper Competition, 2026
 - Finalist, MSOM Student Paper Competition, 2026
-- Finalist, INFORMS Public Sector Operations Research Best Paper Award, 2026
-- Finalist, INFORMS Doing Good with Good OR Student Paper Competition, 2026
 - Winner, Professor Sir James Ball Ph.D. Prize, London Business School, 2026<br>(*merit-based award given each year to one Ph.D. student across the School*)
 - Kavit Handa Ph.D. Fellowship Award, London Business School, 2026
 - London Business School Doctoral Program Financial Award, 2021–2026
